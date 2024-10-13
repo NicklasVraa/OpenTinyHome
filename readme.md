@@ -9,9 +9,7 @@ The undertaking of producing a solid plan by oneself requires either:
 - A lifetime of practical **DIY experience** and know-how.
 - Months of dedicated **research**.
 
-Plans are available online, but none that are complete with utilities. Very often, they require experience in reading traditional 2D blueprints.
-
-The plans that are available in this repository will assume (and therefore require) only one thing: The ability to read.
+Plans are available online, but none that are complete with utilities. Very often, they require experience in reading traditional 2D blueprints. The plans that are available in this repository will assume (and therefore require) only one thing: The ability to read.
 
 ## The Roadmap
 - [x] Establish a protocol for designing accurate 3D-models of homes in Sketchup.

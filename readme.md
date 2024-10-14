@@ -19,7 +19,7 @@ Other plans are available online, but none that are complete with utilities, and
 
 The ideal end-goal is to host community-made construction plans in this repository, not necessarily limited to *tiny houses*.
 
-Shortcuts: [Reference](#reference) | [Base](#base) | [Concepts](#concepts) | [Checklist](#checklist) | [Protocol](#protocol) | [Showcase](#showcase)
+Shortcuts: [Reference](#reference) | [Base](#base) | [Concepts](#concepts) | [Checklist](#checklist) | [Protocol](#protocol) | [Showcase](#showcase) | [Contribute](#contribute)
 
 ## The Reference Model <a name="reference"></a>
 This is a model designed **only to be a reference plan** for others that wish to contribute with their own plans. It serves to illustrate the idea of building a complete model as one would a real house, i.e. using discrete units of timber, fasteners, etc. It also serves to demonstrate how to organize the model using tags. [Model](reference/model.skp) | [Materials](reference/materials.ods)
@@ -92,3 +92,12 @@ The tiny house that I plan to build for myself. This model will be fully detaile
     </tr>
 </table>
 </details>
+
+## Contribute
+You can contribute in the following ways:
+- Fork a base and localize it to the commercial standards of your area.
+- Use an existing base to create full house models.
+- Review existing models, opening issues, compiling material lists, etc.
+- Modify existing models.
+
+All contributions are accepted through pull-requests.

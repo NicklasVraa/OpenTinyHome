@@ -1,62 +1,94 @@
 # OpenTinyHome
-A repository for free-and-open-source **tiny-house blueprints** in the form of complete and fully detailed **3D-models** that only contain **realistic dimensions** for building materials, and striving to comply with best building practices.
+A repository for free-and-open-source **home blueprints** in the form of complete and fully detailed **3D-models** comprised of only readily available components that strive to comply with best building practices.
 
-## The Motivation
-The intent with this project is to enable anyone to build a reliable and up-to-code home for themselves. This biggest hurdle is always acquiring a complete plan.
-
-The undertaking of producing a solid plan by oneself requires either:
-- Degrees in **carpentry**, **electrics**, **plumbing** and possibly **welding** (for trailers).
+## Motivation
+The intent with this repository is to enable anyone to design and/or build a reliable and up-to-code home for themselves. Traditionally, this requires either:
+- Degrees in **carpentry**, **electrics**, **plumbing** and possibly **welding**.
 - A lifetime of practical **DIY experience** and know-how.
-- Months of dedicated **research**.
+- Many months of dedicated **research**.
 
-Plans are available online, but none that are complete with utilities. Very often, they require experience in reading traditional 2D blueprints. The plans that are available in this repository will assume (and therefore require) only one thing: The ability to read.
+Other plans are available online, but none that are complete with utilities, and the vast majority assumes the reader to be an experienced builder. **Plans in this repository assume no prior knowledge**.
 
-## The Roadmap
-- [x] Establish a protocol for designing accurate 3D-models of homes in Sketchup.
-- [ ] Produce a complete 3D model of a standard tiny house to serve as both the first available plan and as a reference for other future plans that may be produced by anyone wanting to contribute.
-- [ ] Produce a LEGO-like instruction manual that detail every step of building the reference tiny house.
+## Roadmap
+- [x] Produce a `reference` model in Sketchup as a *proof-of-value* of pre-modelling.
+- [ ] Produce a `base` model file with the most commonly used construction components.
+- [ ] Produce a `concepts` model file that serves as an interactive building concepts illustrator.
+- [ ] Produce a `checklist` for designing *up-to-code* and *best-practices-compliant* homes.
+- [ ] Establish a `protocol` for translating 3D models into step-by-step instruction manuals.
+- [ ] Localization of everything to fit EU and US standards and build codes.
 
-## Design Constraints
-Every home design that will be hosted here must adhere to the following design constraints:
-- Buildable with only standard materials and hand tools.
-- Well-insulated construction with thick walls and roof.
-- Roof surfaces that support installing photovoltaic panels at an angle.
-- Design must include plans for utilities, i.e. electrics, water and heat.
+The ideal end-goal is to host community-made construction plans in this repository, not necessarily limited to *tiny houses*.
 
-## The Reference
-A reference tiny house blueprint designed **only to be a reference plan** for others that wish to contribute with their own plans. It serves to illustrate the idea of building the model as one would a real house, i.e. using discrete units of timber, as well as how to organize the plan using tags. [Model](the_reference/model.skp) | [Materials](the_reference/materials.ods)
+Shortcuts: [Reference](#reference) | [Base](#base) | [Concepts](#concepts) | [Checklist](#checklist) | [Protocol](#protocol) | [Showcase](#showcase)
 
-![img_0001](the_reference/images/img_0001.jpg)
+## The Reference Model <a name="reference"></a>
+This is a model designed **only to be a reference plan** for others that wish to contribute with their own plans. It serves to illustrate the idea of building a complete model as one would a real house, i.e. using discrete units of timber, fasteners, etc. It also serves to demonstrate how to organize the model using tags. [Model](reference/model.skp) | [Materials](reference/materials.ods)
+
+![img_0001](reference/images/img_0001.jpg)
+
+<details><summary><b>More reference model images</b></summary>
 <table>
     <tr>
-        <td><img src="the_reference/images/img_0002.jpg"></td>
-        <td><img src="the_reference/images/img_0003.jpg"></td>
+        <td><img src="reference/images/img_0002.jpg"></td>
+        <td><img src="reference/images/img_0003.jpg"></td>
     </tr>
     <tr>
-        <td><img src="the_reference/images/img_0004.jpg"></td>
-        <td><img src="the_reference/images/img_0005.jpg"></td>
+        <td><img src="reference/images/img_0004.jpg"></td>
+        <td><img src="reference/images/img_0005.jpg">
+        </td>
     </tr>
     <tr>
-        <td><img src="the_reference/images/img_0006.jpg"></td>
-        <td><img src="the_reference/images/img_0007.jpg"></td>
+        <td><img src="reference/images/img_0006.jpg">
+        The 2nd floor internal layout.</td>
+        <td><img src="reference/images/img_0007.jpg">
+        Basic layouting of utilities.</td>
     </tr>
 </table>
+</details>
 
-## The Nano (WIP)
+## Base (WIP) <a name="base"></a>
+Standard Sketchup files that includes components from which realistic homes can be modelled. These files will be in continuous development. The first base file will use the metric system and standard components available in Denmark (where I live).
+
+| File | Preview |
+| ---- | ------- |
+| [Base-DK](bases/images/base_dk.png) includes Lauritz Knudsen (Scheider Electrics) basic components. Plumbing components and other commonly used building materials are coming, including commercially available solar panel systems.  | <img src="bases/images/base_dk.png"> |
+
+
+<details><summary><b>Future Readme Sections</b></summary>
+
+## Checklist <a name="checklist"></a>
+A continuously evolving checklist for designing and building homes that follow best-practices and contain tip-and-tricks for practical building.
+
+## Concepts<a name="concepts"></a>
+Standard Sketchup files that serve to illustrate established building principles, e.g. how to vent a roof, how to space sheathing and siding, framing anatomy, etc. using interactive 3D *minimum-working-example*-style models.
+
+## Protocol <a name="protocol"></a>
+A protocol for converting 3D models into PDF step-by-step plans. Ideally, it will be automated by feeding correctly tagged Sketchup files into a python script that generates the PDF as a LEGO-style build guide.
+
+</details>
+
+## Showcase <a name="showcase"></a>
+The place where popular models and their build plans are displayed.
+</details>
+
+<details><summary><b>Expand</b></summary>
+
+### The Nano (WIP)
 The tiny house that I plan to build for myself. This model will be fully detailed and also published as a PDF step-by-step guide, once finished.
 
-![img_0001](the_nano/images/img_0001.jpg)
+![img_0001](showcase/the_nano/images/img_0001.jpg)
 <table>
     <tr>
-        <td><img src="the_nano/images/img_0002.jpg"></td>
-        <td><img src="the_nano/images/img_0003.jpg"></td>
+        <td><img src="showcase/the_nano/images/img_0002.jpg"></td>
+        <td><img src="showcase/the_nano/images/img_0003.jpg"></td>
     </tr>
     <tr>
-        <td><img src="the_nano/images/img_0004.jpg"></td>
-        <td><img src="the_nano/images/img_0005.jpg"></td>
+        <td><img src="showcase/the_nano/images/img_0004.jpg"></td>
+        <td><img src="showcase/the_nano/images/img_0005.jpg"></td>
     </tr>
     <tr>
-        <td><img src="the_nano/images/img_0006.jpg"></td>
-        <td><img src="the_nano/images/img_0007.jpg"></td>
+        <td><img src="showcase/the_nano/images/img_0006.jpg"></td>
+        <td><img src="showcase/the_nano/images/img_0007.jpg"></td>
     </tr>
 </table>
+</details>

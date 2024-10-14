@@ -1,6 +1,14 @@
 # OpenTinyHome
 A repository for free-and-open-source **home blueprints** in the form of complete and fully detailed **3D-models** comprised of only readily available components that strive to comply with best building practices.
 
+<table>
+    <tr>
+        <td><img src="showcase/the_nano/images/img_0001.jpg"></td>
+        <td><img src="showcase/the_nano/images/img_0002.jpg"></td>
+        <td><img src="showcase/the_nano/images/img_0003.jpg"></td>
+    </tr>
+</table>
+
 ## Motivation
 The intent with this repository is to enable anyone to design and/or build a reliable and up-to-code home for themselves. Traditionally, this requires either:
 - Degrees in **carpentry**, **electrics**, **plumbing** and possibly **welding**.
@@ -29,13 +37,16 @@ This is a model designed **only to be a reference plan** for others that wish to
 <details><summary><b>More reference model images</b></summary>
 <table>
     <tr>
-        <td><img src="reference/images/img_0002.jpg"></td>
-        <td><img src="reference/images/img_0003.jpg"></td>
+        <td><img src="reference/images/img_0002.jpg">
+        Framing and inner sheathing.</td>
+        <td><img src="reference/images/img_0003.jpg">
+        Outer sheathing.</td>
     </tr>
     <tr>
-        <td><img src="reference/images/img_0004.jpg"></td>
+        <td><img src="reference/images/img_0004.jpg">
+        Thermal control layer (insulation).</td>
         <td><img src="reference/images/img_0005.jpg">
-        </td>
+        The 1st floor internal layout.</td>
     </tr>
     <tr>
         <td><img src="reference/images/img_0006.jpg">

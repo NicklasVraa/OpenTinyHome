@@ -19,9 +19,9 @@ Other plans are available online, but none that are complete with utilities, and
 
 ## Roadmap
 - [x] Produce a `reference` model in Sketchup as a *proof-of-value* of pre-modelling.
-- [ ] Produce a `base` model file with the most commonly used construction components.
-- [ ] Produce a `concepts` model file that serves as an interactive building concepts illustrator.
-- [ ] Produce a `checklist` for designing *up-to-code* and *best-practices-compliant* homes.
+- [ ] Produce `bases` model files with the most commonly used construction components.
+- [ ] Produce `concepts` model files that serve as an interactive building concepts illustrator.
+- [ ] Produce `checklists` for designing *up-to-code* and *best-practices-compliant* homes.
 - [ ] Establish a `protocol` for translating 3D models into step-by-step instruction manuals.
 - [ ] Localization of everything to fit EU and US standards and build codes.
 

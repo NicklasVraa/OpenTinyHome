@@ -1,0 +1,11 @@
+category,material,thickness,width,length,price,class
+board,pine,45,45,3000,29.25,2
+board,pine,45,95,2400,40.20,2
+board,pine,45,95,3000,50.25,2
+board,pine,45,95,3600,60.30,2
+board,pine,45,95,3600,82.95,1
+board,pine,45,195,4200,158.55,1
+sheet,plywood,9,1220,2440,249,2
+sheet,plywood,12,1220,2440,299,2
+sheet,plywood,12,1220,2440,299,1
+sheet,plywood,15,1220,2440,359,1

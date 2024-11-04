@@ -3,8 +3,8 @@
 An **open standard** for designing and optimizing plans for real-world homes.
 <table><tr>
     <td><img src="showcase/the_nano/images/img_0001.jpg"></td>
-    <td><img src="showcase/the_nano/images/img_0003.jpg"></td>
-    <td><img src="showcase/reference/images/img_0001.jpg"></td>
+    <td><img src="showcase/the_micro/images/img_0005.jpg"></td>
+    <td><img src="showcase/the_micro/images/img_0001.jpg"></td>
     <td><img src="resources/images/pack_output_1.png"></td>
 </tr></table>
 
@@ -44,7 +44,7 @@ For the ones interested in designing their own home using this repository, the r
 
 For anyone interested in building a home that has already been designed, simply browse the [showcase](#showcase) section and download a blueprint.
 
-
+---
 ### 3D-Modelling<a name="3d_modelling"></a>
 > Why invest time into modelling my entire home?
 
@@ -101,7 +101,7 @@ Starters are files that includes components from which fully realistic homes can
 | ---- | ------- |
 | [starter_dk_metric.skp](starters/starter_dk_metric.skp) includes Lauritz Knudsen (Scheider Electrics) basic components. Plumbing components and other commonly used building materials are coming, including commercially available solar panel systems.  | <img src="starters/starter_dk_metric_preview.png"> |
 
-
+---
 ### Component Lists<a name="component_lists"></a>
 To take full advantage of having a model of our projects, we must extract data from it. Once a model has been completed, we use it to compile a list of required components as a `csv` file.
 
@@ -162,7 +162,7 @@ The components and stock files can have any name, but the stock-file's name is e
 - Blank lines and `# comments` are ignored by the program, so can be used to increase readability.
 - The `var_dims` number determines the dimensionality of the applied packing algorithm.
 
-
+---
 ### The Scaffold Library <a name="scaffold_lib"></a>
 Using the `components.csv` and `stock.csv` files together with the `Scaffold` python library, we can generate **stock shopping lists**, **cutting diagrams** and extremely accurate estimates of **costs**, **volumes** and **masses** of constructions, both in total and for individual modules, assemblies, categories and any combinations thereof.
 
@@ -249,7 +249,7 @@ Total mass: 1552.71 kg
 
 </details><br>
 
-
+---
 ## Showcase <a name="showcase"></a>
 The place where home models and their plans are displayed.
 
@@ -284,27 +284,27 @@ This is a model designed **only to be a reference plan** for others that wish to
 
 <table>
     <tr>
-        <td><img src="reference/images/img_0002.jpg">
+        <td><img src="showcase/the_micro/images/img_0002.jpg">
         Framing and inner sheathing.</td>
-        <td><img src="reference/images/img_0003.jpg">
+        <td><img src="showcase/the_micro/images/img_0003.jpg">
         Outer sheathing.</td>
     </tr>
     <tr>
-        <td><img src="reference/images/img_0004.jpg">
+        <td><img src="showcase/the_micro/images/img_0004.jpg">
         Thermal control layer (insulation).</td>
-        <td><img src="reference/images/img_0005.jpg">
+        <td><img src="showcase/the_micro/images/img_0005.jpg">
         The 1st floor internal layout.</td>
     </tr>
     <tr>
-        <td><img src="reference/images/img_0006.jpg">
+        <td><img src="showcase/the_micro/images/img_0006.jpg">
         The 2nd floor internal layout.</td>
-        <td><img src="reference/images/img_0007.jpg">
+        <td><img src="showcase/the_micro/images/img_0007.jpg">
         Basic layouting of utilities.</td>
     </tr>
 </table>
 </details>
 
-
+---
 ## Contribute
 You can contribute in the following ways:
 - Fork a starter and localize it to the commercial standards of your area.

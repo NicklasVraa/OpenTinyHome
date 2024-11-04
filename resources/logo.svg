@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Copyright 2024 Nicklas Vraa -->
+
+<svg
+   width="209.69128mm"
+   height="209.69128mm"
+   viewBox="0 0 209.69128 209.69128"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs1" /><g
+     id="layer1"
+     transform="translate(-0.15435571,-0.15435562)"><rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.308711;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+       id="rect1"
+       width="209.69128"
+       height="209.69128"
+       x="0.1543557"
+       y="0.15435562"
+       rx="60" /><g
+       id="g1"
+       transform="matrix(1.166143,0,0,1.0975862,-18.957564,-9.8163987)"><path
+         style="fill:#00aaf0;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="M 31.898406,87.542324 82.050314,24.764165 109.09821,55.976673 82.950308,87.662066 Z"
+         id="path1" /><path
+         id="path2"
+         style="fill:#1fb8ff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 94.433137,87.506819 -49.866959,0.04143 v 91.046491 l 49.866959,-8.08443 z m -7.625992,14.075131 -0.0226,28.05327 -14.380328,1.1714 0.06071,-28.90922 z m -17.853657,0.44916 -0.02171,29.06459 -15.316683,1.27169 0.06071,-29.85557 z" /><path
+         id="path4"
+         style="fill:#85d9ff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 168.97589,87.508703 -45.47766,0.04143 V 184.4522 l 8.1582,-1.62951 v -79.3198 l 15.60783,-0.4807 v 76.68274 l 21.56495,-4.30799 z m -7.0632,15.099637 -0.0917,29.61215 -11.47555,1.12008 v -30.25153 z" /><path
+         style="fill:#67cfff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 136.1949,87.628083 82.073873,24.836423 129.90498,30.603436 180.6957,87.582173 Z"
+         id="path5" /></g></g></svg>

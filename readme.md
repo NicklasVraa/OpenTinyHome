@@ -1,40 +1,287 @@
-# OpenTinyHome
-A repository for free-and-open-source **home blueprints** in the form of complete and fully detailed **3D-models** comprised of only readily available components that strive to comply with best building practices.
+# <img src="resources/logo.svg" width="50" style="vertical-align: -10px"/> Scaffold
 
+An **open standard** for designing and optimizing plans for real-world homes.
+<table><tr>
+    <td><img src="showcase/the_nano/images/img_0001.jpg"></td>
+    <td><img src="showcase/the_nano/images/img_0003.jpg"></td>
+    <td><img src="showcase/reference/images/img_0001.jpg"></td>
+    <td><img src="resources/images/pack_output_1.png"></td>
+</tr></table>
+
+**Purpose**: *To provide anyone with the necessary knowledge to build their own home.*
+Concretely, the intent with Scaffold is the following:
+1. To define an open **standard** for designing homes in 3D-modelling software.
+<!-- 2. To establish and grow a **knowledge base** for all things related to home building. -->
+1. To provide localized collections of pre-modelled **3D components**.
+2. To offer digital tools for construction **planning** and material **optimization**.
+3. To act as a hub for **sharing** home designs.
+
+Scaffold is primarily intended for *tiny-house* homes, but scales to projects of any size.
+
+<details><summary><b>Read more about the motivation of this project</b></summary>
+
+> The barrier-of-entry for building a home is incredibly high. Traditionally, to design and build a home that is up-to-code and suitable for year-round dwelling, one needs degrees in **carpentry**, **electrics** and **plumbing**, or a lifetime of practical **DIY experience** and solid know-how. In any case, many months of dedicated research is unavoidable.
+>
+> Couple these facts with the absolutely ludicrous state of the global housing market, the prospect of ever owning one's own home becomes vanishingly small.
+>
+> To provide a competitive alternative to the housing market, the barrier-of-entry for home building must be lowered all the way to the ground floor. This project aims to do this through providing complete, step-by-step home blueprints that assumes no prior knowledge on part of the reader.
+
+</details>
+
+---
+**Shortcuts**: [Workflow](#workflow) | [3D-Modelling](#3d_modelling) | [Component Lists](#component_lists) | [Scaffold.py](#scaffold_lib) | [Showcase](#showcase) | [Contribute](#contribute)
+
+---
+
+
+## Workflow<a name="workflow"></a>
+For the ones interested in designing their own home using this repository, the recommended workflow is as follows:
+
+1. Build a **3D model** of your home using the components in a starter file.
+2. Use the model to compile a **components list** in the specified csv format.
+3. Find or compile a **stock list** that applies to the area in which you live.
+4. Use the **scaffold** library to generate shopping lists, cutting diagrams and estimates.
+
+For anyone interested in building a home that has already been designed, simply browse the [showcase](#showcase) section and download a blueprint.
+
+
+### 3D-Modelling<a name="3d_modelling"></a>
+> Why invest time into modelling my entire home?
+
+There are **numerous advantages** to modelling your home digitally before ever starting to the build process. These are but a few:
+
+- When you have a model, iterating on ideas and making changes is extremely simple and will cost nothing. You are free to try out different layouts, materials and sizes.
+- Communicating your ideas to others that will be involved in the build process becomes as simple as showing them the model. The risk of misunderstandings is reduced to near-zero.
+- With a finished model, you will have every single length and angle measurement beforehand. Using the provided tools, you can plan every single cut before ever touching a saw. This allows you to optimize both the build process and material utiliization, reducing both the impact on the environment and your wallet.
+- The advantages that are listed above will make obtaining planning permissions much more feasible.
+
+**Modelling Software**:\
+Any modelling tool capable of assigning geometry into **components**, **groups**, and assigning **tags**, is suitable for home modelling. **SketchUp** is very good option, as it is extremely intuitive and available online, free-of-charge (though not FOSS).
+
+#### Model Structure
+The recommended structuring of models is illustrated below with an example:
+
+```
+My_home
+    module_01:1st_floor
+        assembly_01:floor
+            board_45_195_2120
+            sheet_12_1220_2440
+            insulation_195_565_2120
+            ...
+        assembly_02:north_wall
+            board_45_195_2120
+            window_20_1000_1000
+            outlet
+            ...
+        ...
+    module_02:2nd_floor
+        assembly_03:east_gable
+            ...
+        ...
+    module_03:roof
+        ...
+    ...
+```
+
+- A **module** is a group of **assemblies**. An **assembly** is a group of **components**. Modules and assemblies should be tagged as `module_xx:name` and `assembly_xx:name`.
+- A **component** is a basic building block, and should be be tagged with their category, e.g. a `category_xx:board` and `category:sheathing`.
+- Variable-size components like boards and sheets should include dimensions in their name, e.g. `board_thickness_width_length`.
+- A component can be made up of other components, e.g. several electrical switch types share standard components like fastening.
+
+**Note**: Component models need only be as complex as is needed to convey structure and function.
+
+
+#### Starters <a name="starters"></a>
+Starters are files that includes components from which fully realistic homes can be modelled. Starters will be in continuous development. The first starter will be a SketchUp file that uses the metric system and standard components available in Denmark (use this as a reference for how to structure other starters).
+
+**Naming**: `starter_[country_code]_[unit_system].[file_extension]`.
+
+| File | Preview |
+| ---- | ------- |
+| [starter_dk_metric.skp](starters/starter_dk_metric.skp) includes Lauritz Knudsen (Scheider Electrics) basic components. Plumbing components and other commonly used building materials are coming, including commercially available solar panel systems.  | <img src="starters/starter_dk_metric_preview.png"> |
+
+
+### Component Lists<a name="component_lists"></a>
+To take full advantage of having a model of our projects, we must extract data from it. Once a model has been completed, we use it to compile a list of required components as a `csv` file.
+
+Below is an explanation of such a "`components.csv`" file.
+
+<details><summary><b>Components.csv</b></summary>
+
+Header:`category;material;module;assembly;uses;count;thickness;width;length;slope;var_dims`
+
+| Columns     | Explanation                                                                            |
+| :---------- | :------------------------------------------------------------------------------------- |
+| `category`  | Arbitrary category description, e.g. `board`, `sheathing`, `insulation`, etc.          |
+| `material`  | Arbitrary material description, e.g. `untreated pine`, `galvanized steel`, etc.        |
+| `module`    | Location in structure, e.g. `1st floor`, `2nd floor`, `attic` etc.                     |
+| `assembly`  | Location in module, e.g. `floor`, `north wall`, `inner wall`, etc.                     |
+| `uses`      | What component is used for, e.g. `joist`, `stud`, `inner sheathing`, etc.              |
+| `count`     | Simply the number of identical components to avoid repeating lines                     |
+| `thickness` | Typically the shortest dimension of the component.                                     |
+| `width`     | Typically the second shortest dimension of the component.                              |
+| `length`    | Typically the longest dimension of the component.                                      |
+| `slope`     | The angle of the cut into the stock to produce this component                          |
+| `var_dims`  | The number of variable dimensions of the stock, e.g. boards have `1`, sheets have `2`. |
+
+</details><br>
+
+To take advantage of this components list, we also need a list of commercially available (off-the-shelf) stock components, e.g. lumber of standardized dimensions, etc. since it is not possible to purchase construction components with specific dimensions.
+
+Below is the explanation of the structure of such a "`stock.csv`" file.
+
+<details><summary><b>Stock.csv</b></summary>
+
+Header:`category;material;thickness;width;length;count;unit_cost;norm_cost;density;retailer;load;var_dims`
+
+| Columns     | Explanation                                                                        |
+| :---------- | :--------------------------------------------------------------------------------- |
+| `category`  | Arbitrary category description, e.g. `board`, `sheathing`, `insulation`, etc.      |
+| `material`  | Arbitrary material description, e.g. `untreated pine`, `galvanized steel`, etc.    |
+| `count`     | Simply the number of identical components to avoid repeating lines                 |
+| `thickness` | Typically the shortest dimension of the component.                                 |
+| `width`     | Typically the second shortest dimension of the component.                          |
+| `length`    | Typically the longest dimension of the component.                                  |
+| `count`     | The count of individual components in one unit, e.g. 20-pack nails.                |
+| `unit_cost` | The cost of one of these stock items/packs.                                        |
+| `norm_cost` | The normalized cost, e.g. `eur/m`, `usd/m^2`, etc.                                 |
+| `density`   | The mass per volume, e.g. `kg/m^3`.                                                |
+| `retailer`  | Where the entry data is from, i.e. where this stock can be bought.                 |
+| `load`      | Whether the stock is rated for load-bearing, `0` for no, `1` for yes.              |
+| `var_dims`  | The number of variable dimensions of the stock, e.g. boards have `1`, sheets have `2`. |
+
+The components and stock files can have any name, but the stock-file's name is encouraged to follow the pattern `[localization]_[unit-system]_[...].csv`, e.g. `dk_metric.csv` or `us_imperial.csv`, such that they can be shared.
+
+</details><br>
+
+**Note**:
+- The names of the csv files are irrelevant to the program.
+- Columns are semicolon-separated by default, but is settable using the `sep=` parameter.
+- The order of the columns is irrelevant to the program, but the shown order is encouraged.
+- Blank lines and `# comments` are ignored by the program, so can be used to increase readability.
+- The `var_dims` number determines the dimensionality of the applied packing algorithm.
+
+
+### The Scaffold Library <a name="scaffold_lib"></a>
+Using the `components.csv` and `stock.csv` files together with the `Scaffold` python library, we can generate **stock shopping lists**, **cutting diagrams** and extremely accurate estimates of **costs**, **volumes** and **masses** of constructions, both in total and for individual modules, assemblies, categories and any combinations thereof.
+
+```python
+# Import the Plan class from the scaffold library.
+from scaffold import Plan
+```
+
+```python
+# Load in components and available stock.
+plan = Plan("path/to/components.csv", "path/to/stock.csv")
+```
+
+```python
+# Optionally apply filters to the components and/or stock lists.
+# Filters are standard Pandas queries.
+plan.filter_components("module == 'base' and category == 'board'")
+plan.filter_stock("length <= 4800")
+```
+
+```python
+# Visualize all components.
+components = plan.inspect(combine=True, sort=True, show=True)
+```
+
+<details><summary>Output example</summary>
+<table><tr style="vertical-align:top">
+    <td><img src="resources/images/inspect_output.png"></td>
+</tr></table>
+</details><br>
+
+```python
+# Pack components into appropriate stock.
+packings = plan.pack(show=True, cut_thickness=1)
+```
+
+<details><summary>Output example</summary>
+<table><tr style="vertical-align:top">
+    <td><img src="resources/images/pack_output_1.png"></td>
+    <td><img src="resources/images/pack_output_2.png"></td>
+    <td><img src="resources/images/pack_output_3.png"></td>
+</tr><tr style="vertical-align:top">
+    <td><img src="resources/images/pack_output_4.png"></td>
+    <td><img src="resources/images/pack_output_5.png"></td>
+    <td>An example output of running the pack function with show=True. Boards and sheathings are placed on appropriate stock and arranged to maximize utilization, i.e. minimize waste.</td>
+</tr></table>
+</details><br>
+
+```python
+# Summarize findings, i.e. cost, volume, mass, stock utilization, etc.
+plan.summarize(currency="dkk")
+```
+
+<details><summary>Output example</summary>
+
+```
+Summary:
+--------
+Required stock:
+- 17x 45x45x5400 untreated pine board
+  Cost: 1078.31 dkk, Volume: 0.18 m³, Mass: 81.47 kg
+  Utilization: 97.39%
+
+- 28x 45x95x5400 untreated pine board
+  Cost: 2653.84 dkk, Volume: 0.63 m³, Mass: 282.61 kg
+  Utilization: 97.16%
+
+- 34x 45x195x5400 untreated pine board
+  Cost: 6049.62 dkk, Volume: 1.51 m³, Mass: 681.15 kg
+  Utilization: 93.95%
+
+- 27x 12x1220x2440 plywood sheathing
+  Cost: 8073.0 dkk, Volume: 0.78 m³, Mass: 356.6 kg
+  Utilization: 80.38%
+
+- 8x 15x1220x2440 plywood sheathing
+  Cost: 2792.0 dkk, Volume: 0.33 m³, Mass: 150.88 kg
+  Utilization: 91.82%
+
+Total cost: 20646.77 dkk
+Total volume: 3.43 m³
+Total mass: 1552.71 kg
+```
+
+</details><br>
+
+
+## Showcase <a name="showcase"></a>
+The place where home models and their plans are displayed.
+
+<details><summary><b>The Nano</b></summary>
+
+### The Nano
+A modular tiny home designed to be on wheels.
+
+![img_0001](showcase/the_nano/images/img_0001.jpg)
 <table>
     <tr>
-        <td><img src="showcase/the_nano/images/img_0001.jpg"></td>
         <td><img src="showcase/the_nano/images/img_0002.jpg"></td>
         <td><img src="showcase/the_nano/images/img_0003.jpg"></td>
     </tr>
+    <tr>
+        <td><img src="showcase/the_nano/images/img_0004.jpg"></td>
+        <td><img src="showcase/the_nano/images/img_0005.jpg"></td>
+    </tr>
+    <tr>
+        <td><img src="showcase/the_nano/images/img_0006.jpg"></td>
+        <td><img src="showcase/the_nano/images/img_0007.jpg"></td>
+    </tr>
 </table>
+</details>
 
-## Motivation
-The intent with this repository is to enable anyone to design and/or build a reliable and up-to-code home for themselves. Traditionally, this requires either:
-- Degrees in **carpentry**, **electrics**, **plumbing** and possibly **welding**.
-- A lifetime of practical **DIY experience** and know-how.
-- Many months of dedicated **research**.
+<details><summary><b>The Micro</b></summary>
 
-Other plans are available online, but none that are complete with utilities, and the vast majority assumes the reader to be an experienced builder. **Plans in this repository assume no prior knowledge**.
-
-## Roadmap
-- [x] Produce a `reference` model in Sketchup as a *proof-of-value* of pre-modelling.
-- [ ] Produce `bases` model files with the most commonly used construction components.
-- [ ] Produce `concepts` model files that serve as an interactive building concepts illustrator.
-- [ ] Produce `checklists` for designing *up-to-code* and *best-practices-compliant* homes.
-- [ ] Establish a `protocol` for translating 3D models into step-by-step instruction manuals.
-- [ ] Localization of everything to fit EU and US standards and build codes.
-
-The ideal end-goal is to host community-made construction plans in this repository, not necessarily limited to *tiny houses*.
-
-Shortcuts: [Reference](#reference) | [Base](#base) | [Concepts](#concepts) | [Checklist](#checklist) | [Protocol](#protocol) | [Showcase](#showcase) | [Contribute](#contribute)
-
-## The Reference Model <a name="reference"></a>
+### The Micro <a name="reference"></a>
 This is a model designed **only to be a reference plan** for others that wish to contribute with their own plans. It serves to illustrate the idea of building a complete model as one would a real house, i.e. using discrete units of timber, fasteners, etc. It also serves to demonstrate how to organize the model using tags. [Model](reference/model.skp) | [Materials](reference/materials.ods)
 
 ![img_0001](reference/images/img_0001.jpg)
 
-<details><summary><b>More reference model images</b></summary>
 <table>
     <tr>
         <td><img src="reference/images/img_0002.jpg">
@@ -57,58 +304,12 @@ This is a model designed **only to be a reference plan** for others that wish to
 </table>
 </details>
 
-## Base (WIP) <a name="base"></a>
-Standard Sketchup files that includes components from which realistic homes can be modelled. These files will be in continuous development. The first base file will use the metric system and standard components available in Denmark (where I live).
-
-| File | Preview |
-| ---- | ------- |
-| [Base-DK](bases/images/base_dk.png) includes Lauritz Knudsen (Scheider Electrics) basic components. Plumbing components and other commonly used building materials are coming, including commercially available solar panel systems.  | <img src="bases/images/base_dk.png"> |
-
-
-<details><summary><b>Future Readme Sections</b></summary>
-
-## Checklist <a name="checklist"></a>
-A continuously evolving checklist for designing and building homes that follow best-practices and contain tip-and-tricks for practical building.
-
-## Concepts<a name="concepts"></a>
-Standard Sketchup files that serve to illustrate established building principles, e.g. how to vent a roof, how to space sheathing and siding, framing anatomy, etc. using interactive 3D *minimum-working-example*-style models.
-
-## Protocol <a name="protocol"></a>
-A protocol for converting 3D models into PDF step-by-step plans. Ideally, it will be automated by feeding correctly tagged Sketchup files into a python script that generates the PDF as a LEGO-style build guide.
-
-</details>
-
-## Showcase <a name="showcase"></a>
-The place where popular models and their build plans are displayed.
-</details>
-
-<details><summary><b>Expand</b></summary>
-
-### The Nano (WIP)
-The tiny house that I plan to build for myself. This model will be fully detailed and also published as a PDF step-by-step guide, once finished.
-
-![img_0001](showcase/the_nano/images/img_0001.jpg)
-<table>
-    <tr>
-        <td><img src="showcase/the_nano/images/img_0002.jpg"></td>
-        <td><img src="showcase/the_nano/images/img_0003.jpg"></td>
-    </tr>
-    <tr>
-        <td><img src="showcase/the_nano/images/img_0004.jpg"></td>
-        <td><img src="showcase/the_nano/images/img_0005.jpg"></td>
-    </tr>
-    <tr>
-        <td><img src="showcase/the_nano/images/img_0006.jpg"></td>
-        <td><img src="showcase/the_nano/images/img_0007.jpg"></td>
-    </tr>
-</table>
-</details>
 
 ## Contribute
 You can contribute in the following ways:
-- Fork a base and localize it to the commercial standards of your area.
-- Use an existing base to create full house models.
-- Review existing models, opening issues, compiling material lists, etc.
-- Modify existing models.
+- Fork a starter and localize it to the commercial standards of your area.
+- Use an existing starter to create full home models.
+- Review existing models, opening issues, compile material lists, etc.
+- Modify or modularize existing models.
 
 All contributions are accepted through pull-requests.

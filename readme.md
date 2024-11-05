@@ -222,29 +222,34 @@ plan.summarize(currency="dkk")
 Summary:
 --------
 Required stock:
-- 17x 45x45x5400 untreated pine board
+• 17x 45x45x5400 untreated pine board
+  63.43 dkk/unit at stark.dk
   Cost: 1078.31 dkk, Volume: 0.18 m³, Mass: 81.47 kg
   Utilization: 97.39%
 
-- 28x 45x95x5400 untreated pine board
+• 28x 45x95x5400 untreated pine board
+  94.78 dkk/unit at stark.dk
   Cost: 2653.84 dkk, Volume: 0.63 m³, Mass: 282.61 kg
   Utilization: 97.16%
 
-- 34x 45x195x5400 untreated pine board
+• 34x 45x195x5400 untreated pine board
+  177.93 dkk/unit at lavpristrae.dk
   Cost: 6049.62 dkk, Volume: 1.51 m³, Mass: 681.15 kg
   Utilization: 93.95%
 
-- 27x 12x1220x2440 plywood sheathing
-  Cost: 8073.0 dkk, Volume: 0.78 m³, Mass: 356.6 kg
-  Utilization: 80.38%
+• 42x 12x1220x2440 plywood sheathing
+  299.0 dkk/unit at jemogfix.dk
+  Cost: 12558.0 dkk, Volume: 1.33 m³, Mass: 610.52 kg
+  Utilization: 88.46%
 
-- 8x 15x1220x2440 plywood sheathing
-  Cost: 2792.0 dkk, Volume: 0.33 m³, Mass: 150.88 kg
-  Utilization: 91.82%
+• 12x 15x1220x2440 plywood sheathing
+  349.0 dkk/unit at jemogfix.dk
+  Cost: 4188.0 dkk, Volume: 0.52 m³, Mass: 239.24 kg
+  Utilization: 97.06%
 
-Total cost: 20646.77 dkk
-Total volume: 3.43 m³
-Total mass: 1552.71 kg
+Total cost: 26527.77 dkk
+Total volume: 4.17 m³
+Total mass: 1894.99 kg
 ```
 
 </details><br>

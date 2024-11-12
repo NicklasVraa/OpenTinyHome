@@ -5,16 +5,16 @@ An **open standard** for designing and optimizing plans for real-world homes.
     <td><img src="showcase/the_nano/images/img_0001.jpg"></td>
     <td><img src="showcase/the_micro/images/img_0005.jpg"></td>
     <td><img src="showcase/the_micro/images/img_0001.jpg"></td>
-    <td><img src="resources/images/pack_output_1.png"></td>
+    <td><img src="resources/images/pack_output_3.png"></td>
 </tr></table>
 
 **Purpose**: *To provide anyone with the necessary knowledge to build their own home.*
 Concretely, the intent with Scaffold is the following:
 1. To define an open **standard** for designing homes in 3D-modelling software.
-<!-- 2. To establish and grow a **knowledge base** for all things related to home building. -->
-1. To provide localized collections of pre-modelled **3D components**.
-2. To offer digital tools for construction **planning** and material **optimization**.
-3. To act as a hub for **sharing** home designs.
+2. To provide localized collections of pre-modelled **3D components**.
+3. To offer digital tools for construction **planning** and material **optimization**.
+4. To act as a hub for **sharing** home designs.
+5. To establish a **knowledge base** for home building.
 
 Scaffold is primarily intended for *tiny-house* homes, but scales to projects of any size.
 
@@ -175,6 +175,103 @@ from scaffold import Plan
 # Load in components and available stock.
 plan = Plan("path/to/components.csv", "path/to/stock.csv")
 ```
+<details><summary>Input example</summary>
+
+components.csv
+```csv
+category;material;module;assembly;uses;count;thickness;width;length;slope;var_dims
+
+# Boards.
+board;untreated pine;base;floor;rim joist;2;45;195;4880;0;1
+board;untreated pine;base;floor;joist;9;45;195;2350;0;1
+board;untreated pine;base;floor;blocking;6;45;95;565;0;1
+board;untreated pine;base;floor;blocking;2;45;95;542.5;0;1
+
+board;untreated pine;base;north wall;wall plate;2;45;195;4880;0;1
+board;untreated pine;base;north wall;full stud;4;45;195;2120;0;1
+...
+
+# Inner sheathing.
+sheathing;plywood;base;floor;inner sheathing;4;15;1220;2440;0;2
+
+sheathing;plywood;base;north wall;inner sheathing;2;12;1220;2210;0;2
+sheathing;plywood;base;north wall;inner sheathing;2;12;1025;2210;0;2
+
+sheathing;plywood;base;south wall;inner sheathing;2;12;1025;2210;0;2
+sheathing;plywood;base;south wall;inner sheathing;1;12;907;2210;0;2
+...
+
+# Outer sheathing.
+sheathing;plywood;base;north wall;outer sheathing;4;12;1220;2420;0;2
+
+sheathing;plywood;base;south wall;outer sheathing;2;12;1220;2420;0;2
+sheathing;plywood;base;south wall;outer sheathing;1;12;907;2420;0;2
+...
+```
+
+stock.csv
+```csv
+category;material;thickness;width;length;count;unit_cost;norm_cost;density;retailer;load;var_dims
+
+# Boards
+board;untreated pine;45;45;3000;1;29.25;9.75;450;jemogfix.dk;0;1
+board;untreated pine;45;45;4200;1;33.39;7.95;450;lavpristrae.dk;0;1
+board;untreated pine;45;45;4800;1;56.38;11.75;450;stark.dk;0;1
+board;untreated pine;45;45;5100;1;59.90;11.75;450;stark.dk;0;1
+board;untreated pine;45;45;5400;1;63.43;11.75;450;stark.dk;0;1
+
+board;untreated pine;45;70;3000;1;54.95;18.31;450;stark.dk;1;1
+board;untreated pine;45;70;3600;1;65.94;18.31;450;stark.dk;1;1
+board;untreated pine;45;70;4200;1;76.93;18.31;450;stark.dk;1;1
+board;untreated pine;45;70;4800;1;87.91;18.31;450;stark.dk;1;1
+board;untreated pine;45;70;5100;1;93.41;18.31;450;stark.dk;1;1
+board;untreated pine;45;70;5400;1;98.90;18.31;450;stark.dk;1;1
+
+board;untreated pine;45;95;2400;1;33.48;13.95;450;lavpristrae.dk;0;1
+board;untreated pine;45;95;2700;1;37.66;13.95;450;lavpristrae.dk;0;1
+board;untreated pine;45;95;3000;1;41.85;13.95;450;lavpristrae.dk;0;1
+board;untreated pine;45;95;3600;1;50.23;13.95;450;lavpristrae.dk;0;1
+board;untreated pine;45;95;4200;1;58.59;13.95;450;lavpristrae.dk;0;1
+board;untreated pine;45;95;4800;1;66.96;13.95;450;lavpristrae.dk;0;1
+board;untreated pine;45;95;5100;1;89.50;17.55;450;stark.dk;0;1
+board;untreated pine;45;95;5100;1;124.29;24.39;450;stark.dk;1;1
+board;untreated pine;45;95;5400;1;94.78;17.55;450;stark.dk;0;1
+board;untreated pine;45;95;5400;1;131.70;24.39;450;stark.dk;1;1
+
+board;untreated pine;45;120;3600;1;75.42;20.95;450;lavpristrae.dk;1;1
+board;untreated pine;45;120;4200;1;87.99;20.95;450;lavpristrae.dk;1;1
+board;untreated pine;45;120;4800;1;100.56;20.95;450;lavpristrae.dk;1;1
+
+board;untreated pine;45;145;3600;1;89.82;24.95;450;lavpristrae.dk;1;1
+board;untreated pine;45;145;4200;1;104.80;24.95;450;lavpristrae.dk;1;1
+board;untreated pine;45;145;4800;1;119.76;24.95;450;lavpristrae.dk;1;1
+board;untreated pine;45;145;5400;1;134.73;24.95;450;lavpristrae.dk;1;1
+
+board;untreated pine;45;195;3600;1;118.62;32.95;450;lavpristrae.dk;1;1
+board;untreated pine;45;195;4200;1;138.39;32.95;450;lavpristrae.dk;1;1
+board;untreated pine;45;195;4800;1;158.16;32.95;450;lavpristrae.dk;1;1
+board;untreated pine;45;195;5400;1;177.93;32.95;450;lavpristrae.dk;1;1
+
+board;untreated pine;45;245;3600;1;154.62;42.95;450;lavpristrae.dk;1;1
+board;untreated pine;45;245;4200;1;180.39;42.95;450;lavpristrae.dk;1;1
+board;untreated pine;45;245;4800;1;206.16;42.95;450;lavpristrae.dk;1;1
+board;untreated pine;45;245;5400;1;231.93;42.95;450;lavpristrae.dk;1;1
+
+board;untreated pine;45;295;3600;1;215.82;59.95;450;lavpristrae.dk;1;1
+board;untreated pine;45;295;4200;1;287.76;59.95;450;lavpristrae.dk;1;1
+
+# Sheathing
+sheathing;plywood;9;1220;2440;1;249.00;0;460;jemogfix.dk;0;2
+sheathing;plywood;12;1220;2440;1;299.00;0;460;jemogfix.dk;0;2
+sheathing;plywood;12;1220;2440;1;289.00;0;460;jemogfix.dk;1;2
+sheathing;plywood;15;1220;2440;1;349.00;0;460;jemogfix.dk;1;2
+
+# Insulation
+insulation;rigid mineral wool;95;600;960;10;169.00;29.34;37;jemogfix.dk;0;2
+```
+
+</details><br>
+
 
 ```python
 # Optionally apply filters to the components and/or stock lists.
@@ -222,34 +319,54 @@ plan.summarize(currency="dkk")
 Summary:
 --------
 Required stock:
-• 17x 45x45x5400 untreated pine board
-  63.43 dkk/unit at stark.dk
-  Cost: 1078.31 dkk, Volume: 0.18 m³, Mass: 81.47 kg
-  Utilization: 97.39%
+• 16x 45x45x5400 untreated pine board
+  63.43 dkk per unit at stark.dk
+  Cost: 1014.88 dkk, Volume: 0.17 m³, Mass: 76.89 kg
+  Utilization: 97.66%
 
-• 28x 45x95x5400 untreated pine board
-  94.78 dkk/unit at stark.dk
-  Cost: 2653.84 dkk, Volume: 0.63 m³, Mass: 282.61 kg
-  Utilization: 97.16%
+• 1x 45x45x5100 untreated pine board
+  59.9 dkk per unit at stark.dk
+  Cost: 59.9 dkk, Volume: 0.01 m³, Mass: 4.58 kg
+  Utilization: 98.57%
 
-• 34x 45x195x5400 untreated pine board
-  177.93 dkk/unit at lavpristrae.dk
-  Cost: 6049.62 dkk, Volume: 1.51 m³, Mass: 681.15 kg
-  Utilization: 93.95%
+• 27x 45x95x5400 untreated pine board
+  94.78 dkk per unit at stark.dk
+  Cost: 2559.06 dkk, Volume: 0.62 m³, Mass: 278.43 kg
+  Utilization: 99.27%
+
+• 1x 45x95x2400 untreated pine board
+  33.48 dkk per unit at lavpristrae.dk
+  Cost: 33.48 dkk, Volume: 0.01 m³, Mass: 4.18 kg
+  Utilization: 90.46%
+
+• 32x 45x195x5400 untreated pine board
+  177.93 dkk per unit at lavpristrae.dk
+  Cost: 5693.76 dkk, Volume: 1.43 m³, Mass: 642.25 kg
+  Utilization: 94.12%
+
+• 2x 45x195x4800 untreated pine board
+  158.16 dkk per unit at lavpristrae.dk
+  Cost: 316.32 dkk, Volume: 0.08 m³, Mass: 35.64 kg
+  Utilization: 94.02%
 
 • 42x 12x1220x2440 plywood sheathing
-  299.0 dkk/unit at jemogfix.dk
+  299.0 dkk per unit at jemogfix.dk
   Cost: 12558.0 dkk, Volume: 1.33 m³, Mass: 610.52 kg
   Utilization: 88.46%
 
 • 12x 15x1220x2440 plywood sheathing
-  349.0 dkk/unit at jemogfix.dk
+  349.0 dkk per unit at jemogfix.dk
   Cost: 4188.0 dkk, Volume: 0.52 m³, Mass: 239.24 kg
   Utilization: 97.06%
 
-Total cost: 26527.77 dkk
-Total volume: 4.17 m³
-Total mass: 1894.99 kg
+Total stock volume: 4.46 m³
+Total component volume: 4.16 m³
+
+Total stock mass: 2025.35 kg
+Total component mass: 1891.72 kg
+
+Total utilization: 93.43%
+Total cost: 26423.4 dkk
 ```
 
 </details><br>
@@ -317,4 +434,4 @@ You can contribute in the following ways:
 - Review existing models, opening issues, compile material lists, etc.
 - Modify or modularize existing models.
 
-All contributions are accepted through pull-requests.
+All contributions are processed through pull-requests.

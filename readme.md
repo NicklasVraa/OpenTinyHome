@@ -2,7 +2,7 @@
 
 An **open standard** for designing and optimizing plans for real-world homes.
 <table><tr>
-    <td><img src="showcase/the_nano/images/img_0001.jpg"></td>
+    <td><img src="showcase/the_nano/images/img_0001.png"></td>
     <td><img src="showcase/the_micro/images/img_0005.jpg"></td>
     <td><img src="showcase/the_micro/images/img_0001.jpg"></td>
     <td><img src="resources/images/pack_output_3.png"></td>
@@ -380,7 +380,7 @@ The place where home models and their plans are displayed.
 ### The Nano
 A modular tiny home designed to be on wheels.
 
-![img_0001](showcase/the_nano/images/img_0001.jpg)
+![img_0001](showcase/the_nano/images/img_0001.png)
 <table>
     <tr>
         <td><img src="showcase/the_nano/images/img_0002.jpg"></td>

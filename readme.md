@@ -5,7 +5,7 @@ An **open standard** for designing and optimizing plans for real-world homes.
     <td><img src="showcase/the_nano/images/img_0001.png"></td>
     <td><img src="showcase/the_micro/images/img_0005.jpg"></td>
     <td><img src="showcase/the_micro/images/img_0001.jpg"></td>
-    <td><img src="resources/images/pack_output_3.png"></td>
+    <td><img src="resources/images/cut_lists/untreated_pine_board_45x45x5400.jpg"></td>
 </tr></table>
 
 **Purpose**: *To provide anyone with the necessary knowledge to build their own home.*
@@ -286,9 +286,15 @@ components = plan.inspect(combine=True, sort=True, show=True)
 ```
 
 <details><summary>Output example</summary>
-<table><tr style="vertical-align:top">
-    <td><img src="resources/images/inspect_output.png"></td>
-</tr></table>
+    <table><tr style="vertical-align:top">
+        <td><img src="resources/images/component_lists/untreated_pine_board_45x45x5400.jpg"></td>
+        <td><img src="resources/images/component_lists/untreated_pine_board_45x95x5400.jpg"></td>
+        <td><img src="resources/images/component_lists/untreated_pine_board_45x195x5400.jpg"></td>
+    </tr><tr style="vertical-align:top">
+        <td><img src="resources/images/component_lists/plywood_sheathing_12x1220x2440.jpg"></td>
+        <td><img src="resources/images/component_lists/plywood_sheathing_15x1220x2440.jpg"></td>
+        <td><img src="resources/images/component_lists/glass_wool_insulation_95x600x960.jpg"></td>
+    </tr></table>
 </details><br>
 
 ```python
@@ -297,15 +303,15 @@ packings = plan.pack(show=True, cut_thickness=1)
 ```
 
 <details><summary>Output example</summary>
-<table><tr style="vertical-align:top">
-    <td><img src="resources/images/pack_output_1.png"></td>
-    <td><img src="resources/images/pack_output_2.png"></td>
-    <td><img src="resources/images/pack_output_3.png"></td>
-</tr><tr style="vertical-align:top">
-    <td><img src="resources/images/pack_output_4.png"></td>
-    <td><img src="resources/images/pack_output_5.png"></td>
-    <td>An example output of running the pack function with show=True. Boards and sheathings are placed on appropriate stock and arranged to maximize utilization, i.e. minimize waste.</td>
-</tr></table>
+    <table><tr style="vertical-align:top">
+        <td><img src="resources/images/cut_lists/untreated_pine_board_45x45x5400.jpg"></td>
+        <td><img src="resources/images/cut_lists/untreated_pine_board_45x95x5400.jpg"></td>
+        <td><img src="resources/images/cut_lists/untreated_pine_board_45x195x5400.jpg"></td>
+    </tr><tr style="vertical-align:top">
+        <td><img src="resources/images/cut_lists/plywood_sheathing_12x1220x2440.jpg"></td>
+        <td><img src="resources/images/cut_lists/plywood_sheathing_15x1220x2440.jpg"></td>
+        <td><img src="resources/images/cut_lists/glass_wool_insulation_95x600x960.jpg"></td>
+    </tr></table>
 </details><br>
 
 ```python
@@ -319,54 +325,59 @@ plan.summarize(currency="dkk")
 Summary:
 --------
 Required stock:
-• 16x 45x45x5400 untreated pine board
-  63.43 dkk per unit at stark.dk
-  Cost: 1014.88 dkk, Volume: 0.17 m³, Mass: 76.89 kg
-  Utilization: 97.66%
+• 16 of 45x45x5400 untreated pine board
+  63.43 dkk per 1 unit(s) at stark.dk
+  Cost: 1014.88 dkk, Volume: 0.17 m³, Mass: 77.21 kg
+  Utilization: 98.07%
 
-• 1x 45x45x5100 untreated pine board
-  59.9 dkk per unit at stark.dk
-  Cost: 59.9 dkk, Volume: 0.01 m³, Mass: 4.58 kg
-  Utilization: 98.57%
+• 1 of 45x45x4800 untreated pine board
+  56.38 dkk per 1 unit(s) at stark.dk
+  Cost: 56.38 dkk, Volume: 0.01 m³, Mass: 4.12 kg
+  Utilization: 94.1%
 
-• 27x 45x95x5400 untreated pine board
-  94.78 dkk per unit at stark.dk
-  Cost: 2559.06 dkk, Volume: 0.62 m³, Mass: 278.43 kg
-  Utilization: 99.27%
+• 27 of 45x95x5400 untreated pine board
+  94.78 dkk per 1 unit(s) at stark.dk
+  Cost: 2559.06 dkk, Volume: 0.62 m³, Mass: 278.13 kg
+  Utilization: 99.16%
 
-• 1x 45x95x2400 untreated pine board
-  33.48 dkk per unit at lavpristrae.dk
+• 1 of 45x95x2400 untreated pine board
+  33.48 dkk per 1 unit(s) at lavpristrae.dk
   Cost: 33.48 dkk, Volume: 0.01 m³, Mass: 4.18 kg
   Utilization: 90.46%
 
-• 32x 45x195x5400 untreated pine board
-  177.93 dkk per unit at lavpristrae.dk
-  Cost: 5693.76 dkk, Volume: 1.43 m³, Mass: 642.25 kg
-  Utilization: 94.12%
+• 32 of 45x195x5400 untreated pine board
+  177.93 dkk per 1 unit(s) at lavpristrae.dk
+  Cost: 5693.76 dkk, Volume: 1.43 m³, Mass: 642.66 kg
+  Utilization: 94.18%
 
-• 2x 45x195x4800 untreated pine board
-  158.16 dkk per unit at lavpristrae.dk
+• 2 of 45x195x4800 untreated pine board
+  158.16 dkk per 1 unit(s) at lavpristrae.dk
   Cost: 316.32 dkk, Volume: 0.08 m³, Mass: 35.64 kg
   Utilization: 94.02%
 
-• 42x 12x1220x2440 plywood sheathing
-  299.0 dkk per unit at jemogfix.dk
+• 42 of 12x1220x2440 plywood sheathing
+  299.0 dkk per 1 unit(s) at jemogfix.dk
   Cost: 12558.0 dkk, Volume: 1.33 m³, Mass: 610.52 kg
   Utilization: 88.46%
 
-• 12x 15x1220x2440 plywood sheathing
-  349.0 dkk per unit at jemogfix.dk
+• 12 of 15x1220x2440 plywood sheathing
+  349.0 dkk per 1 unit(s) at jemogfix.dk
   Cost: 4188.0 dkk, Volume: 0.52 m³, Mass: 239.24 kg
   Utilization: 97.06%
 
-Total stock volume: 4.46 m³
-Total component volume: 4.16 m³
+• 22 10-packs of 95x600x960 glass wool insulation
+  169.0 dkk per 10 unit(s) at jemogfix.dk
+  Cost: 3718.0 dkk, Volume: 10.65 m³, Mass: 170.35 kg
+  Utilization: 90.92%
 
-Total stock mass: 2025.35 kg
-Total component mass: 1891.72 kg
+Total stock volume: 16.17 m³
+Total component volume: 14.81 m³
 
-Total utilization: 93.43%
-Total cost: 26423.4 dkk
+Total stock mass: 2212.44 kg
+Total component mass: 2062.04 kg
+
+Total utilization: 91.62%
+Total cost: 30137.88 dkk
 ```
 
 </details><br>

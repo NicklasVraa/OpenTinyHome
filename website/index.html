@@ -1,5 +1,5 @@
 <!--
-Desc: Scaffold website structure.
+Desc: Scaffold website.
 Auth: Nicklas Vraa
 -->
 
@@ -9,6 +9,7 @@ Auth: Nicklas Vraa
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scaffold</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         body, html {
             margin: 0; padding: 0; width: 100%; height: 100%;
@@ -26,6 +27,9 @@ Auth: Nicklas Vraa
             justify-content: space-between; align-items: center; z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+        nav {
+            flex-grow: 1;
+        }
         .menu-bar a {
             color: white; text-decoration: none;
             margin: 0 10px; cursor: pointer; font-size: 14px;
@@ -33,9 +37,16 @@ Auth: Nicklas Vraa
         .menu-bar a:hover {
             text-decoration: underline;
         }
+        .social-icons {
+            display: flex; margin-right: 10px;
+        }
+        .social-icons a {
+            text-decoration: none;
+        }
         .menu-bar button {
-            background-color: #000000; color: #FFFFFF; padding: 5px 15px;
-            border: none; border-radius: 5px; cursor: pointer;
+            background-color: #000000; color: #FFFFFF; margin-top: -4px;
+            border: none; border-radius: 5px; cursor: pointer; font-size: 14px;
+
         }
         .menu-bar button:hover {
             background-color: #222222;
@@ -110,8 +121,14 @@ Auth: Nicklas Vraa
             <a href="#about" onclick="navigate('about')"><span id="about-link">...</span></a>
             <a href="#contact" onclick="navigate('contact')"><span id="contact-link">...</span></a>
         </nav>
+        <div class="social-icons">
+            <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
         <button id="language-toggle" onclick="toggle_language()">EN/DA</button>
     </div>
+
     <section id="showcase" class="media-section">
         <div class="carousel" id="carousel">
             <div class="slide" id="slide_1">...</div>

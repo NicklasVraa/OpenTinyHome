@@ -12,10 +12,8 @@ Auth: Nicklas Vraa
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <style>
         body, html {
-            margin: 0; padding: 0;
-            width: 100%; height: 100%;
-            box-sizing: border-box;
-            font-family: Helvetica, sans-serif;
+            margin: 0; padding: 0; width: 100%; height: 100%;
+            box-sizing: border-box; font-family: Helvetica, sans-serif;
         }
         h1 {
             font-size: 2rem; margin-bottom: 20px;
@@ -23,150 +21,88 @@ Auth: Nicklas Vraa
         h3 {
             font-size: 1rem; margin-bottom: 10px;
         }
-
-        /* Menu */
         .menu-bar {
-            position: sticky;
-            top: 0;
-            background-color: #000000;
-            color: white;
-            padding: 10px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
+            position: sticky; top: 0; padding: 10px 30px; display: flex;
+            background-color: #000000; color: white;
+            justify-content: space-between; align-items: center; z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .menu-bar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            cursor: pointer;
-            font-size: 14px;
+            color: white; text-decoration: none;
+            margin: 0 10px; cursor: pointer; font-size: 14px;
         }
         .menu-bar a:hover {
             text-decoration: underline;
         }
         .menu-bar button {
-            background-color: #000000;
-            color: #FFFFFF;
-            padding: 5px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            background-color: #000000; color: #FFFFFF; padding: 5px 15px;
+            border: none; border-radius: 5px; cursor: pointer;
         }
         .menu-bar button:hover {
             background-color: #222222;
         }
-
-        /* Home */
         .media-section {
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-            background-color: #333;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 100%; height: 100vh; overflow: hidden; position: relative;
+            background-color: #333; color: white; display: flex;
+            justify-content: center; align-items: center;
         }
         .carousel {
-            display: flex;
-            width: 100%;
-            height: 100%;
+            display: flex; width: 100%; height: 100%;
             transition: transform 0.5s ease-in-out;
         }
         .slide {
-            min-width: 100%;
-            height: 100%;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #111111; /* Add a default background for the slides */
-            color: white;
-            font-size: 2rem;
+            display: flex; justify-content: center; align-items: center;
+            min-width: 100%; height: 100%; font-size: 2rem; text-align: center;
+            background-color: #111111; color: white;
         }
         .carousel-controls {
-            position: absolute;
-            top: 48.5%;
-            width: 92%;
-            display: flex;
+            position: absolute; top: 48.5%; width: 92%; display: flex;
             justify-content: space-between;
         }
         .carousel-controls button {
-            background-color: #00000000;
-            border: none;
-            color: #DDDDDD;
-            cursor: pointer;
-            font-size: 1rem;
+            font-size: 1rem; border: none; cursor: pointer;
+            background-color: #00000000; color: #DDDDDD;
         }
         .carousel-controls button:hover {
             color: #ffffff;
         }
-
-        /* About */
         .text-section {
+            background-color: #151515; color: #ffffff;
             padding: 20px 40px 30px 40px;
-            background-color: #151515;
-            color: #ffffff;
         }
-
-        /* Design */
         .design-section {
             padding: 0px;
         }
-
         .split-view {
             display: flex;
         }
-
         .left-panel {
-            flex: 1;
+            flex: 1; display: flex; flex-direction: column;
             padding: 20px 40px 40px 40px;
-            display: flex;
-            flex-direction: column;
-            background-color: #111111;
-            color: #ffffff;
+            background-color: #111111; color: #ffffff;
         }
         .right-panel {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #181818;
-            color: #ffffff;
+            flex: 1; display: flex; justify-content: center; align-items: center;
+            background-color: #181818; color: #ffffff;
         }
         .right-panel img {
-            max-width: 90%;
-            max-height: 90%;
-            border: 2px solid #ccc;
+            max-width: 90%; max-height: 90%; border: 2px solid #ccc;
         }
         .radio-group label {
-            display: block;
-            margin: 10px 0px;
+            display: block; margin: 10px 0px;
         }
-
         input[type="radio"] {
-            appearance: none; /* Remove default styling */
-            width: 12px;
-            height: 12px;
-            border: 1px solid #ffffff; /* Border color */
-            border-radius: 50%; /* Make it circular */
-            background: #000000; /* Background color */
-            cursor: pointer;
-            margin-right: 10px;
+            appearance: none;
+            width: 12px; height: 12px;
+            border: 1px solid #ffffff; border-radius: 50%;
+            background: #000000; cursor: pointer; margin-right: 10px;
         }
-
         input[type="radio"]:checked {
-            background-color: #ffffff; /* Color when checked */
+            background-color: #ffffff;
         }
     </style>
 </head>
 <body>
-
-    <!-- Menu -->
     <div class="menu-bar">
         <nav>
             <a id="home" onclick="home()">Scaffold</a>
@@ -177,8 +113,6 @@ Auth: Nicklas Vraa
         </nav>
         <button id="language-toggle" onclick="toggleLanguage()">EN/DA</button>
     </div>
-
-    <!-- Home -->
     <section id="showcase" class="media-section">
         <div class="carousel" id="carousel">
             <div class="slide" id="home-slide1">...</div>
@@ -190,14 +124,10 @@ Auth: Nicklas Vraa
             <button onclick="nextSlide()">&#10095;</button>
         </div>
     </section>
-
-    <!-- Welcome -->
     <section id="welcome" class="text-section">
         <h1 id="welcome-heading">...</h1>
         <p id="welcome-text">...</p>
     </section>
-
-    <!-- Design -->
     <section id="design" class="design-section">
         <div class="split-view">
             <div class="left-panel">
@@ -213,66 +143,54 @@ Auth: Nicklas Vraa
             </div>
         </div>
     </section>
-
-    <!-- About -->
     <section id="about" class="text-section">
         <h1 id="about-heading">...</h1>
         <p id="about-text">...</p>
     </section>
-
-    <!-- Contact -->
     <section id="contact" class="text-section">
         <h1 id="contact-heading">...</h1>
         <p id="contact-text">...</p>
     </section>
-
-    <!-- <script src="script.js"></script> -->
     <script>
-        /* Variables. */
-        let language = "da"; /* Default language. */
+        let language = "da";
         let currentSlide = 0;
-
-        /* Constants. */
         const slides = document.querySelectorAll('.slide');
         const TEXT = {
-        en: {
-            homeSlide1: "Slide one",
-            homeSlide2: "Slide two",
-            homeSlide3: "Slide three",
-            welcomeLink: "Welcome",
-            welcomeHeading: "Welcome to Scaffold",
-            welcomeText: "Do you dream of owning your very own tiny home? You've come to the right place! Customize your tiny home and have it made to order.",
-            designLink: "Design",
-            designHeading: "Customize your home",
-            insulationHeading: "Insulation:",
-            designOption1: "7-1/2 inches",
-            designOption2: "3-3/4 inches",
-            aboutLink: "About Us",
-            contactLink: "Contact",
-        },
-        da: {
-            homeSlide1: "Slide et",
-            homeSlide2: "Slide to",
-            homeSlide3: "Slide tre",
-            welcomeLink: "Velkommen",
-            welcomeHeading: "Velkommen til Scaffold",
-            welcomeText: "Velkommen til Scaffold! Dette er en simpel, interaktiv Single Page Application (SPA) bygget uden brug af eksterne biblioteker eller rammer.",
-            designLink: "Design",
-            designHeading: "Skræddersy dit hjem",
-            insulationHeading: "Isolering:",
-            designOption1: "190 mm",
-            designOption2: "95 mm",
-            aboutLink: "Om Os",
-            contactLink: "Kontakt",
-        }
+            en: {
+                homeSlide1: "Slide one",
+                homeSlide2: "Slide two",
+                homeSlide3: "Slide three",
+                welcomeLink: "Welcome",
+                welcomeHeading: "Welcome to Scaffold",
+                welcomeText: "Do you dream of owning your very own tiny home? You've come to the right place! Customize your tiny home and have it made to order.",
+                designLink: "Design",
+                designHeading: "Customize your home",
+                insulationHeading: "Insulation:",
+                designOption1: "7-1/2 inches",
+                designOption2: "3-3/4 inches",
+                aboutLink: "About Us",
+                contactLink: "Contact",
+            },
+            da: {
+                homeSlide1: "Slide et",
+                homeSlide2: "Slide to",
+                homeSlide3: "Slide tre",
+                welcomeLink: "Velkommen",
+                welcomeHeading: "Velkommen til Scaffold",
+                welcomeText: "Velkommen til Scaffold! Dette er en simpel, interaktiv Single Page Application (SPA) bygget uden brug af eksterne biblioteker eller rammer.",
+                designLink: "Design",
+                designHeading: "Skræddersy dit hjem",
+                insulationHeading: "Isolering:",
+                designOption1: "190 mm",
+                designOption2: "95 mm",
+                aboutLink: "Om Os",
+                contactLink: "Kontakt",
+            }
         };
-
-        /* Populate text elements when page loads. */
         window.onload = function() {
             toggleLanguage();
         };
 
-        /* Scroll to the top of the page. */
         function home() {
             window.scrollTo({top: 0, behavior: "smooth"});
         }
@@ -287,29 +205,27 @@ Auth: Nicklas Vraa
             setText(language);
         }
 
-        /* Function to set the text content based on the selected language. */
         function setText(language) {
-        const text = TEXT[language];
+            const text = TEXT[language];
 
-        document.getElementById("home-slide1").textContent = text.homeSlide1;
-        document.getElementById("home-slide2").textContent = text.homeSlide2;
-        document.getElementById("home-slide3").textContent = text.homeSlide3;
+            document.getElementById("home-slide1").textContent = text.homeSlide1;
+            document.getElementById("home-slide2").textContent = text.homeSlide2;
+            document.getElementById("home-slide3").textContent = text.homeSlide3;
 
-        document.getElementById("welcome-link").textContent = text.welcomeLink;
-        document.getElementById("welcome-heading").textContent = text.welcomeHeading;
-        document.getElementById("welcome-text").textContent = text.welcomeText;
+            document.getElementById("welcome-link").textContent = text.welcomeLink;
+            document.getElementById("welcome-heading").textContent = text.welcomeHeading;
+            document.getElementById("welcome-text").textContent = text.welcomeText;
 
-        document.getElementById("design-link").textContent = text.designLink;
-        document.getElementById("design-heading").textContent = text.designHeading;
-        document.getElementById("insulation-heading").textContent = text.insulationHeading;
-        document.getElementById("design-option1").textContent = text.designOption1;
-        document.getElementById("design-option2").textContent = text.designOption2;
+            document.getElementById("design-link").textContent = text.designLink;
+            document.getElementById("design-heading").textContent = text.designHeading;
+            document.getElementById("insulation-heading").textContent = text.insulationHeading;
+            document.getElementById("design-option1").textContent = text.designOption1;
+            document.getElementById("design-option2").textContent = text.designOption2;
 
-        document.getElementById("about-link").textContent = text.aboutLink;
-        document.getElementById("contact-link").textContent = text.contactLink;
+            document.getElementById("about-link").textContent = text.aboutLink;
+            document.getElementById("contact-link").textContent = text.contactLink;
         }
 
-        /* Functions related to the showcase section. */
         function updateCarousel() {
             const carouselContent = document.getElementById("carousel");
             carouselContent.style.transform = `translateX(-${currentSlide * 100}%)`;
@@ -325,7 +241,6 @@ Auth: Nicklas Vraa
             updateCarousel();
         }
 
-        /* Functions related to the design section. */
         function updateImage(imagePath) {
             document.getElementById("selected-image").src = imagePath;
         }

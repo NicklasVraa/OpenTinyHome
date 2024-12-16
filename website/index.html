@@ -9,7 +9,6 @@ Auth: Nicklas Vraa
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scaffold</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
     <style>
         body, html {
             margin: 0; padding: 0; width: 100%; height: 100%;
@@ -111,17 +110,17 @@ Auth: Nicklas Vraa
             <a href="#about" onclick="navigate('about')"><span id="about-link">...</span></a>
             <a href="#contact" onclick="navigate('contact')"><span id="contact-link">...</span></a>
         </nav>
-        <button id="language-toggle" onclick="toggleLanguage()">EN/DA</button>
+        <button id="language-toggle" onclick="toggle_language()">EN/DA</button>
     </div>
     <section id="showcase" class="media-section">
         <div class="carousel" id="carousel">
-            <div class="slide" id="home-slide1">...</div>
-            <div class="slide" id="home-slide2">...</div>
-            <div class="slide" id="home-slide3">...</div>
+            <div class="slide" id="slide_1">...</div>
+            <div class="slide" id="slide_2">...</div>
+            <div class="slide" id="slide_3">...</div>
         </div>
         <div class="carousel-controls">
-            <button onclick="prevSlide()">&#10094;</button>
-            <button onclick="nextSlide()">&#10095;</button>
+            <button onclick="prev_slide()">&#10094;</button>
+            <button onclick="next_slide()">&#10095;</button>
         </div>
     </section>
     <section id="welcome" class="text-section">
@@ -132,10 +131,17 @@ Auth: Nicklas Vraa
         <div class="split-view">
             <div class="left-panel">
                 <h2 id="design-heading">...</h2>
+
+                <div class="radio-group">
+                    <h3 id="model-heading">...</h3>
+                    <label><input type="radio" name="model-options" onclick="update_preview()"> <span id="model-option-1">...</span></label>
+                    <label><input type="radio" name="model-options" onclick="update_preview()"> <span id="model-option-2">...</span></label>
+                </div>
+
                 <div class="radio-group">
                     <h3 id="insulation-heading">...</h3>
-                    <label><input type="radio" name="option" value="image1" onclick="updateImage('res/image1.jpg')"> <span id="design-option1">...</span></label>
-                    <label><input type="radio" name="option" value="image2" onclick="updateImage('res/image2.jpg')"> <span id="design-option2">...</span></label>
+                    <label><input type="radio" name="insulation-options" onclick="update_preview()"> <span id="insulation-option-1">...</span></label>
+                    <label><input type="radio" name="insulation-options" onclick="update_preview()"> <span id="insulation-option-2">...</span></label>
                 </div>
             </div>
             <div class="right-panel">
@@ -152,43 +158,43 @@ Auth: Nicklas Vraa
         <p id="contact-text">...</p>
     </section>
     <script>
-        let language = "da";
+        let language = "en";
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const TEXT = {
             en: {
-                homeSlide1: "Slide one",
-                homeSlide2: "Slide two",
-                homeSlide3: "Slide three",
-                welcomeLink: "Welcome",
-                welcomeHeading: "Welcome to Scaffold",
-                welcomeText: "Do you dream of owning your very own tiny home? You've come to the right place! Customize your tiny home and have it made to order.",
-                designLink: "Design",
-                designHeading: "Customize your home",
-                insulationHeading: "Insulation:",
-                designOption1: "7-1/2 inches",
-                designOption2: "3-3/4 inches",
-                aboutLink: "About Us",
-                contactLink: "Contact",
+                welcome_menu_entry: "Welcome",
+                design_menu_entry: "Design",
+                about_menu_entry: "About Us",
+                contact_menu_entry: "Contact",
+                slide_1: "Slide one",
+                slide_2: "Slide two",
+                slide_3: "Slide three",
+                welcome_heading: "Welcome to Scaffold",
+                welcome_text: "Do you dream of owning your very own tiny home? You've come to the right place! Customize your tiny home and have it made to order.",
+                design_heading: "Customize your home",
+                insulation_heading: "Insulation:",
+                insulation_option_1: "7-1/2 inches",
+                insulation_option_2: "3-3/4 inches",
             },
             da: {
-                homeSlide1: "Slide et",
-                homeSlide2: "Slide to",
-                homeSlide3: "Slide tre",
-                welcomeLink: "Velkommen",
-                welcomeHeading: "Velkommen til Scaffold",
-                welcomeText: "Velkommen til Scaffold! Dette er en simpel, interaktiv Single Page Application (SPA) bygget uden brug af eksterne biblioteker eller rammer.",
-                designLink: "Design",
-                designHeading: "Skræddersy dit hjem",
-                insulationHeading: "Isolering:",
-                designOption1: "190 mm",
-                designOption2: "95 mm",
-                aboutLink: "Om Os",
-                contactLink: "Kontakt",
+                welcome_menu_entry: "Velkommen",
+                design_menu_entry: "Design",
+                about_menu_entry: "Om Os",
+                contact_menu_entry: "Kontakt",
+                slide_1: "Slide et",
+                slide_2: "Slide to",
+                slide_3: "Slide tre",
+                welcome_heading: "Velkommen til Scaffold",
+                welcome_text: "Velkommen til Scaffold! Dette er en simpel, interaktiv Single Page Application (SPA) bygget uden brug af eksterne biblioteker eller rammer.",
+                design_heading: "Skræddersy dit hjem",
+                insulation_heading: "Isolering:",
+                insulation_option_1: "190 mm",
+                insulation_option_2: "95 mm",
             }
         };
         window.onload = function() {
-            toggleLanguage();
+            toggle_language();
         };
 
         function home() {
@@ -196,53 +202,50 @@ Auth: Nicklas Vraa
         }
 
         /* Switch language of entire page. */
-        function toggleLanguage() {
-            if (language === "en") {
-                language = "da";
-            } else {
-                language = "en";
-            }
-            setText(language);
+        function toggle_language() {
+            if (language === "en") { language = "da"; }
+            else { language = "en"; }
+            set_text(language);
         }
 
-        function setText(language) {
+        function set_text(language) {
             const text = TEXT[language];
 
-            document.getElementById("home-slide1").textContent = text.homeSlide1;
-            document.getElementById("home-slide2").textContent = text.homeSlide2;
-            document.getElementById("home-slide3").textContent = text.homeSlide3;
+            document.getElementById("slide_1").textContent = text.slide_1;
+            document.getElementById("slide_2").textContent = text.slide_2;
+            document.getElementById("slide_3").textContent = text.slide_3;
 
-            document.getElementById("welcome-link").textContent = text.welcomeLink;
-            document.getElementById("welcome-heading").textContent = text.welcomeHeading;
-            document.getElementById("welcome-text").textContent = text.welcomeText;
+            document.getElementById("welcome-link").textContent = text.welcome_menu_entry;
+            document.getElementById("welcome-heading").textContent = text.welcome_heading;
+            document.getElementById("welcome-text").textContent = text.welcome_text;
 
-            document.getElementById("design-link").textContent = text.designLink;
-            document.getElementById("design-heading").textContent = text.designHeading;
-            document.getElementById("insulation-heading").textContent = text.insulationHeading;
-            document.getElementById("design-option1").textContent = text.designOption1;
-            document.getElementById("design-option2").textContent = text.designOption2;
+            document.getElementById("design-link").textContent = text.design_menu_entry;
+            document.getElementById("design-heading").textContent = text.design_heading;
+            document.getElementById("insulation-heading").textContent = text.insulation_heading;
+            document.getElementById("insulation-option-1").textContent = text.insulation_option_1;
+            document.getElementById("insulation-option-2").textContent = text.insulation_option_2;
 
-            document.getElementById("about-link").textContent = text.aboutLink;
-            document.getElementById("contact-link").textContent = text.contactLink;
+            document.getElementById("about-link").textContent = text.about_menu_entry;
+            document.getElementById("contact-link").textContent = text.contact_menu_entry;
         }
 
-        function updateCarousel() {
+        function update_carousel() {
             const carouselContent = document.getElementById("carousel");
             carouselContent.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
 
-        function nextSlide() {
+        function next_slide() {
             currentSlide = (currentSlide + 1) % slides.length;
-            updateCarousel();
+            update_carousel();
         }
 
-        function prevSlide() {
+        function prev_slide() {
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            updateCarousel();
+            update_carousel();
         }
 
-        function updateImage(imagePath) {
-            document.getElementById("selected-image").src = imagePath;
+        function update_preview() {
+            /* TODO */
         }
     </script>
 </body>

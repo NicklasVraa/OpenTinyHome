@@ -13,7 +13,11 @@ Auth: Nicklas Vraa
     <style>
         body, html {
             margin: 0; padding: 0; width: 100%; height: 100%;
-            box-sizing: border-box; font-family: Helvetica, sans-serif;
+            box-sizing: border-box; background-color: #000000;
+            font-family: Helvetica, sans-serif;
+        }
+        .container {
+            max-width: 1200px; margin: 0 auto; box-sizing: border-box;
         }
         h1 {
             font-size: 2rem; margin-bottom: 20px;
@@ -39,6 +43,17 @@ Auth: Nicklas Vraa
         }
         .menu-bar a:hover {
             text-decoration: underline;
+        }
+        #burger-menu {
+            display: none;
+            background: none;
+            color: white;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+        }
+        #menu-links {
+            display: flex;
         }
         .social-icons {
             display: flex; margin-right: 10px;
@@ -82,7 +97,7 @@ Auth: Nicklas Vraa
             background-color: #111111; color: white;
         }
         .carousel-controls {
-            position: absolute; top: 48.5%; width: 92%; display: flex;
+            position: absolute; top: 48.5%; width: 90%; display: flex;
             justify-content: space-between;
         }
         .carousel-controls button {
@@ -100,7 +115,7 @@ Auth: Nicklas Vraa
             padding: 0px;
         }
         .split-view {
-            display: flex;
+            display: flex; flex-direction: row;
         }
         .left-panel {
             flex: 1; display: flex; flex-direction: column;
@@ -129,16 +144,54 @@ Auth: Nicklas Vraa
         input[type="radio"]:checked, input[type="checkbox"]:checked {
             background-color: #ffffff;
         }
+
+        /* Media query for smaller screens */
+        @media screen and (max-width: 768px) {
+            #burger-menu {
+                display: block; /* Show burger icon */
+            }
+            #menu-links {
+                display: none; /* Hide full menu by default */
+                flex-direction: column;
+                background-color: #000; /* Match your design */
+                position: absolute;
+                top: 40px; /* Adjust based on your menu-bar height */
+                left: 0px;
+                width: 100px;
+                padding: 14px;
+                z-index: 1000;
+            }
+            #menu-links.active {
+                display: flex; /* Show the menu when active */
+            }
+            #menu-links a {
+                color: white;
+                padding: 10px;
+            }
+            .split-view {
+                flex-direction: column; /* Stack panels vertically */
+            }
+            .right-panel {
+                order: 2; /* Ensures the right panel is below the left panel */
+            }
+
+            .left-panel {
+                order: 1; /* Left panel stays on top */
+            }
+        }
     </style>
 </head>
-<body>
+<body><div class="container">
     <div class="menu-bar">
-        <nav>
+        <button id="burger-menu" onclick="toggle_menu()" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav id="menu-links">
             <a id="home" onclick="home()">Scaffold</a>
-            <a href="#welcome" onclick="navigate(event, 'welcome')"><span id="welcome-link">...</span></a>
-            <a href="#design" onclick="navigate(event, 'design')"><span id="design-link">...</span></a>
-            <a href="#about" onclick="navigate(event, 'about')"><span id="about-link">...</span></a>
-            <a href="#contact" onclick="navigate(event, 'contact')"><span id="contact-link">...</span></a>
+            <a href="#welcome" class="menu-link" onclick="navigate(event, 'welcome')"><span id="welcome-link">...</span></a>
+            <a href="#design" class="menu-link" onclick="navigate(event, 'design')"><span id="design-link">...</span></a>
+            <a href="#about" class="menu-link" onclick="navigate(event, 'about')"><span id="about-link">...</span></a>
+            <a href="#contact" class="menu-link" onclick="navigate(event, 'contact')"><span id="contact-link">...</span></a>
         </nav>
         <div class="social-icons">
             <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -208,7 +261,7 @@ Auth: Nicklas Vraa
                 </div>
             </div>
             <div class="right-panel">
-                <img id="selected-image" src="res/image1.jpg" alt="Selected" />
+                <img id="selected-image" src="res/image1.jpg" alt="Preview" />
             </div>
         </div>
     </section>
@@ -300,6 +353,22 @@ Auth: Nicklas Vraa
             }
         }
 
+        function toggle_menu() {
+            const menu_links = document.getElementById("menu-links");
+            menu_links.classList.toggle("active");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuLinks = document.querySelectorAll(".menu-link");
+            const menu = document.getElementById("menu-links");
+
+            menuLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    menu.classList.remove("active"); /* Collapse menu. */
+                });
+            });
+        });
+
         /* Switch language of entire page. */
         function toggle_language() {
             if (language === "en") { language = "da"; }
@@ -368,5 +437,5 @@ Auth: Nicklas Vraa
             /* TODO */
         }
     </script>
-</body>
+</div></body>
 </html>

@@ -18,6 +18,9 @@ Auth: Nicklas Vraa
         h1 {
             font-size: 2rem; margin-bottom: 20px;
         }
+        h2 {
+            font-size: 1.5rem; margin-bottom: 5px;
+        }
         h3 {
             font-size: 1rem; margin-bottom: 10px;
         }
@@ -101,13 +104,16 @@ Auth: Nicklas Vraa
         .radio-group label {
             display: block; margin: 10px 0px;
         }
-        input[type="radio"] {
+        .radio-group-horizontal label {
+            margin: 10px 24px 10px 0px;
+        }
+        input[type="radio"], input[type="checkbox"] {
             appearance: none;
             width: 12px; height: 12px;
             border: 1px solid #ffffff; border-radius: 50%;
             background: #000000; cursor: pointer; margin-right: 10px;
         }
-        input[type="radio"]:checked {
+        input[type="radio"]:checked, input[type="checkbox"]:checked {
             background-color: #ffffff;
         }
     </style>
@@ -148,17 +154,44 @@ Auth: Nicklas Vraa
         <div class="split-view">
             <div class="left-panel">
                 <h2 id="design-heading">...</h2>
-
+                <p id="design-text">...</p>
+                <div class="radio-group-horizontal">
+                    <h3 id="standards-heading">Standard</h3>
+                    <label><input type="radio" name="standards-options" onclick="update_preview()"> <span id="standards-option-1">DK</span></label>
+                    <label><input type="radio" name="standards-options" onclick="update_preview()"> <span id="standards-option-2">EU</span></label>
+                    <label><input type="radio" name="standards-options" onclick="update_preview()"> <span id="standards-option-3">UK</span></label>
+                    <label><input type="radio" name="standards-options" onclick="update_preview()"> <span id="standards-option-4">US</span></label>
+                </div>
                 <div class="radio-group">
                     <h3 id="model-heading">...</h3>
                     <label><input type="radio" name="model-options" onclick="update_preview()"> <span id="model-option-1">...</span></label>
                     <label><input type="radio" name="model-options" onclick="update_preview()"> <span id="model-option-2">...</span></label>
+                    <label><input type="radio" name="model-options" onclick="update_preview()"> <span id="model-option-3">...</span></label>
                 </div>
-
                 <div class="radio-group">
                     <h3 id="insulation-heading">...</h3>
                     <label><input type="radio" name="insulation-options" onclick="update_preview()"> <span id="insulation-option-1">...</span></label>
                     <label><input type="radio" name="insulation-options" onclick="update_preview()"> <span id="insulation-option-2">...</span></label>
+                </div>
+                <div class="radio-group">
+                    <h3 id="second-floor-heading">...</h3>
+                    <label><input type="radio" name="second-floor-options" onclick="update_preview()"> <span id="second-floor-option-1">...</span></label>
+                    <label><input type="radio" name="second-floor-options" onclick="update_preview()"> <span id="second-floor-option-2">...</span></label>
+                    <label><input type="radio" name="second-floor-options" onclick="update_preview()"> <span id="second-floor-option-3">...</span></label>
+                </div>
+                <div class="radio-group">
+                    <h3 id="addons-heading">...</h3>
+                    <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-1">...</span></label>
+                    <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-2">...</span></label>
+                    <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-3">...</span></label>
+                    <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-4">...</span></label>
+                </div>
+                <div class="radio-group">
+                    <h3 id="interior-heading">...</h3>
+                    <label><input type="checkbox" name="interior-options" onclick="update_preview()"> <span id="interior-option-1">...</span></label>
+                    <label><input type="checkbox" name="interior-options" onclick="update_preview()"> <span id="interior-option-2">...</span></label>
+                    <label><input type="checkbox" name="interior-options" onclick="update_preview()"> <span id="interior-option-3">...</span></label>
+                    <label><input type="checkbox" name="interior-options" onclick="update_preview()"> <span id="interior-option-4">...</span></label>
                 </div>
             </div>
             <div class="right-panel">
@@ -175,7 +208,7 @@ Auth: Nicklas Vraa
         <p id="contact-text">...</p>
     </section>
     <script>
-        let language = "en";
+        let language = "da";
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const TEXT = {
@@ -190,9 +223,23 @@ Auth: Nicklas Vraa
                 welcome_heading: "Welcome to Scaffold",
                 welcome_text: "Do you dream of owning your very own tiny home? You've come to the right place! Customize your tiny home and have it made to order.",
                 design_heading: "Customize your home",
+                design_text: "Choose how you want your home built and see a preview to the right.",
+                model_heading: "Model:",
+                model_option_1: "The Pico",
+                model_option_2: "The Nano",
+                model_option_3: "The Micro",
                 insulation_heading: "Insulation:",
                 insulation_option_1: "7-1/2 inches",
                 insulation_option_2: "3-3/4 inches",
+                second_floor_heading: "2nd floor",
+                second_floor_option_1: "Without 2nd floor",
+                second_floor_option_2: "With half-height 2nd floor",
+                second_floor_option_3: "With full-height 2nd floor",
+                addons_heading: "Off-grid addons",
+                addons_option_1: "Adjustable solar panel mounting rack",
+                addons_option_2: "Complete solar panel system",
+                addons_option_3: "Roof-mounted, fold-down windmill",
+                addons_option_4: "Rain water collection and filtration system",
             },
             da: {
                 welcome_menu_entry: "Velkommen",
@@ -205,9 +252,23 @@ Auth: Nicklas Vraa
                 welcome_heading: "Velkommen til Scaffold",
                 welcome_text: "Velkommen til Scaffold! Dette er en simpel, interaktiv Single Page Application (SPA) bygget uden brug af eksterne biblioteker eller rammer.",
                 design_heading: "Skræddersy dit hjem",
+                design_text: "Vælg hvordan dit hjem skal bygges, og se et preview i højre side.",
+                model_heading: "Model:",
+                model_option_1: "The Pico",
+                model_option_2: "The Nano",
+                model_option_3: "The Micro",
                 insulation_heading: "Isolering:",
                 insulation_option_1: "190 mm",
                 insulation_option_2: "95 mm",
+                second_floor_heading: "2. sal:",
+                second_floor_option_1: "Uden 2. sal",
+                second_floor_option_2: "Med halv-højde 2. sal",
+                second_floor_option_3: "Med fuld-højde 2. sal",
+                addons_heading: "Off-grid tilføjelser",
+                addons_option_1: "Justérbart opsats til solcellepaneler",
+                addons_option_2: "Komplet solcelle-system",
+                addons_option_3: "Tagmonteret, fold-ned vindmølle",
+                addons_option_4: "Regnvandsopsamling og filtrering system",
             }
         };
         window.onload = function() {
@@ -233,16 +294,37 @@ Auth: Nicklas Vraa
             document.getElementById("slide_3").textContent = text.slide_3;
 
             document.getElementById("welcome-link").textContent = text.welcome_menu_entry;
+
             document.getElementById("welcome-heading").textContent = text.welcome_heading;
             document.getElementById("welcome-text").textContent = text.welcome_text;
 
             document.getElementById("design-link").textContent = text.design_menu_entry;
+
             document.getElementById("design-heading").textContent = text.design_heading;
+            document.getElementById("design-text").textContent = text.design_text;
+
+            document.getElementById("model-heading").textContent = text.model_heading;
+            document.getElementById("model-option-1").textContent = text.model_option_1;
+            document.getElementById("model-option-2").textContent = text.model_option_2;
+            document.getElementById("model-option-3").textContent = text.model_option_3;
+
             document.getElementById("insulation-heading").textContent = text.insulation_heading;
             document.getElementById("insulation-option-1").textContent = text.insulation_option_1;
             document.getElementById("insulation-option-2").textContent = text.insulation_option_2;
 
+            document.getElementById("second-floor-heading").textContent = text.second_floor_heading;
+            document.getElementById("second-floor-option-1").textContent = text.second_floor_option_1;
+            document.getElementById("second-floor-option-2").textContent = text.second_floor_option_2;
+            document.getElementById("second-floor-option-3").textContent = text.second_floor_option_3;
+
+            document.getElementById("addons-heading").textContent = text.addons_heading;
+            document.getElementById("addons-option-1").textContent = text.addons_option_1;
+            document.getElementById("addons-option-2").textContent = text.addons_option_2;
+            document.getElementById("addons-option-3").textContent = text.addons_option_3;
+            document.getElementById("addons-option-4").textContent = text.addons_option_4;
+
             document.getElementById("about-link").textContent = text.about_menu_entry;
+
             document.getElementById("contact-link").textContent = text.contact_menu_entry;
         }
 

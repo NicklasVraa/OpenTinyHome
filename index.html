@@ -20,26 +20,26 @@ Auth: Nicklas Vraa
             max-width: 1200px; margin: 0 auto; box-sizing: border-box;
         }
         h1 {
-            font-size: 2rem; margin-bottom: 20px;
+            font-size: 2rem; margin: 20px 0px;
         }
         h2 {
-            font-size: 1.5rem; margin-bottom: 5px;
+            font-size: 1.5rem; margin: 5px 0px;
         }
         h3 {
-            font-size: 1rem; margin-bottom: 10px;
+            font-size: 1rem; margin: 5px 0px;
         }
         .menu-bar {
             position: sticky; top: 0; padding: 10px 30px; display: flex;
             background-color: #000000; color: white;
             justify-content: space-between; align-items: center; z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         nav {
             flex-grow: 1;
         }
         .menu-bar a {
             color: white; text-decoration: none;
-            margin: 0 10px; cursor: pointer; font-size: 14px;
+            margin: 0px 20px 0px 0px; cursor: pointer; font-size: 14px;
         }
         .menu-bar a:hover {
             text-decoration: underline;
@@ -48,7 +48,7 @@ Auth: Nicklas Vraa
             display: none;
             background: none;
             color: white;
-            font-size: 24px;
+            font-size: 20px;
             border: none;
             cursor: pointer;
         }
@@ -56,7 +56,7 @@ Auth: Nicklas Vraa
             display: flex;
         }
         .social-icons {
-            display: flex; margin-right: 10px;
+            display: flex; margin: 0px 10px;
         }
         .social-icons a {
             text-decoration: none;
@@ -73,7 +73,7 @@ Auth: Nicklas Vraa
             position: fixed; bottom: 20px; right: 20px; z-index: 1000;
             background-color: rgba(0, 0, 0, 0.2); color: #fff;
             border: none; border-radius: 50%;
-            width: 50px; height: 50px; font-size: 24px; cursor: pointer;
+            width: 40px; height: 40px; font-size: 24px; cursor: pointer;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             display: flex; justify-content: center; align-items: center;
             transition: background-color 0.3s ease;
@@ -109,7 +109,7 @@ Auth: Nicklas Vraa
         }
         .text-section {
             background-color: #151515; color: #ffffff;
-            padding: 20px 40px 30px 40px;
+            padding: 30px;
         }
         .design-section {
             padding: 0px;
@@ -119,7 +119,7 @@ Auth: Nicklas Vraa
         }
         .left-panel {
             flex: 1; display: flex; flex-direction: column;
-            padding: 20px 40px 40px 40px;
+            padding: 30px;
             background-color: #111111; color: #ffffff;
         }
         .right-panel {
@@ -129,11 +129,17 @@ Auth: Nicklas Vraa
         .right-panel img {
             max-width: 90%; max-height: 90%; border: 2px solid #ccc;
         }
+        .radio-group {
+            margin: 10px 0px 0px 0px;
+        }
         .radio-group label {
             display: block; margin: 10px 0px;
         }
+        .radio-group-horizontal {
+            margin: 10px 0px 0px 0px;
+        }
         .radio-group-horizontal label {
-            margin: 10px 24px 10px 0px;
+            margin: 0px 20px 0px 0px;
         }
         input[type="radio"], input[type="checkbox"] {
             appearance: none;
@@ -157,8 +163,8 @@ Auth: Nicklas Vraa
                 position: absolute;
                 top: 40px; /* Adjust based on your menu-bar height */
                 left: 0px;
-                width: 100px;
-                padding: 14px;
+                width: 150px;
+                padding: 0px 0px 20px 30px;
                 z-index: 1000;
             }
             #menu-links.active {
@@ -166,13 +172,13 @@ Auth: Nicklas Vraa
             }
             #menu-links a {
                 color: white;
-                padding: 10px;
+                padding: 10px 0px;
             }
             .split-view {
-                flex-direction: column; /* Stack panels vertically */
+                flex-direction: column;
             }
             .right-panel {
-                order: 2; /* Ensures the right panel is below the left panel */
+                order: 2;
             }
 
             .left-panel {
@@ -187,7 +193,7 @@ Auth: Nicklas Vraa
             <i class="fas fa-bars"></i>
         </button>
         <nav id="menu-links">
-            <a id="home" onclick="home()">Scaffold</a>
+            <a id="home" class="menu-link" onclick="home()">Scaffold</a>
             <a href="#welcome" class="menu-link" onclick="navigate(event, 'welcome')"><span id="welcome-link">...</span></a>
             <a href="#design" class="menu-link" onclick="navigate(event, 'design')"><span id="design-link">...</span></a>
             <a href="#about" class="menu-link" onclick="navigate(event, 'about')"><span id="about-link">...</span></a>

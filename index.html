@@ -17,7 +17,8 @@ Auth: Nicklas Vraa
             font-family: Helvetica, sans-serif;
         }
         .container {
-            max-width: 1200px; margin: 0 auto; box-sizing: border-box;
+            max-width: 1200px; margin: 0 auto;
+            box-sizing: border-box;
         }
         h1 {
             font-size: 2rem; margin: 20px 0px;
@@ -153,15 +154,18 @@ Auth: Nicklas Vraa
 
         /* Media query for smaller screens */
         @media screen and (max-width: 768px) {
+            .menu-bar {
+                padding: 10px 10px;
+            }
             #burger-menu {
                 display: block; /* Show burger icon */
             }
             #menu-links {
-                display: none; /* Hide full menu by default */
+                display: none;
                 flex-direction: column;
-                background-color: #000; /* Match your design */
+                background-color: #000;
                 position: absolute;
-                top: 40px; /* Adjust based on your menu-bar height */
+                top: 40px;
                 left: 0px;
                 width: 150px;
                 padding: 0px 0px 20px 30px;
@@ -287,7 +291,7 @@ Auth: Nicklas Vraa
             en: {
                 welcome_menu_entry: "Welcome",
                 design_menu_entry: "Design",
-                about_menu_entry: "About Us",
+                about_menu_entry: "About",
                 contact_menu_entry: "Contact",
                 slide_1: "Slide one",
                 slide_2: "Slide two",
@@ -296,11 +300,11 @@ Auth: Nicklas Vraa
                 welcome_text: "Do you dream of owning your very own tiny home? You've come to the right place! Customize your tiny home and have it made to order.",
                 design_heading: "Customize your home",
                 design_text: "Choose how you want your home built and see a preview to the right.",
-                model_heading: "Model:",
+                model_heading: "Model",
                 model_option_1: "The Pico",
                 model_option_2: "The Nano",
                 model_option_3: "The Micro",
-                insulation_heading: "Insulation:",
+                insulation_heading: "Insulation",
                 insulation_option_1: "7-1/2 inches",
                 insulation_option_2: "3-3/4 inches",
                 second_floor_heading: "2nd floor",
@@ -325,14 +329,14 @@ Auth: Nicklas Vraa
                 welcome_text: "Velkommen til Scaffold! Dette er en simpel, interaktiv Single Page Application (SPA) bygget uden brug af eksterne biblioteker eller rammer.",
                 design_heading: "Skræddersy dit hjem",
                 design_text: "Vælg hvordan dit hjem skal bygges, og se et preview i højre side.",
-                model_heading: "Model:",
+                model_heading: "Model",
                 model_option_1: "The Pico",
                 model_option_2: "The Nano",
                 model_option_3: "The Micro",
-                insulation_heading: "Isolering:",
+                insulation_heading: "Isolering",
                 insulation_option_1: "190 mm",
                 insulation_option_2: "95 mm",
-                second_floor_heading: "2. sal:",
+                second_floor_heading: "2. sal",
                 second_floor_option_1: "Uden 2. sal",
                 second_floor_option_2: "Med halv-højde 2. sal",
                 second_floor_option_3: "Med fuld-højde 2. sal",

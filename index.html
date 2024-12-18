@@ -15,16 +15,17 @@ Auth: Nicklas Vraa
             margin: 0; padding: 0; width: 100%; height: 100%;
             box-sizing: border-box; background-color: #000000;
             font-family: Helvetica, sans-serif;
+            line-height: 1.4rem;
         }
         .container {
             max-width: 1200px; margin: 0 auto;
             box-sizing: border-box;
         }
         h1 {
-            font-size: 2rem; margin: 20px 0px;
+            font-size: 2rem; margin: 10px 0px 10px;
         }
         h2 {
-            font-size: 1.5rem; margin: 5px 0px;
+            font-size: 1.4rem; margin: 20px 0px 5px;
         }
         h3 {
             font-size: 1rem; margin: 5px 0px;
@@ -152,7 +153,7 @@ Auth: Nicklas Vraa
             background-color: #ffffff;
         }
         li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         /* Media query for smaller screens */
@@ -216,10 +217,10 @@ Auth: Nicklas Vraa
 
         <nav id="menu-links">
             <a id="home" class="menu-link" onclick="home()">Scaffold</a>
-            <a href="#welcome" class="menu-link" onclick="navigate(event, 'welcome')"><span id="welcome-link">...</span></a>
-            <a href="#design" class="menu-link" onclick="navigate(event, 'design')"><span id="design-link">...</span></a>
-            <a href="#about" class="menu-link" onclick="navigate(event, 'about')"><span id="about-link">...</span></a>
-            <a href="#contact" class="menu-link" onclick="navigate(event, 'contact')"><span id="contact-link">...</span></a>
+            <a href="#welcome" class="menu-link" onclick="navigate(event, 'welcome')"><span id="welcome-link">Welcome</span></a>
+            <a href="#design" class="menu-link" onclick="navigate(event, 'design')"><span id="design-link">Design</span></a>
+            <a href="#about" class="menu-link" onclick="navigate(event, 'about')"><span id="about-link">About</span></a>
+            <a href="#contact" class="menu-link" onclick="navigate(event, 'contact')"><span id="contact-link">Contact</span></a>
         </nav>
 
         <div class="social-icons">
@@ -235,9 +236,9 @@ Auth: Nicklas Vraa
 
     <section id="showcase" class="media-section">
         <div class="carousel" id="carousel">
-            <div class="slide" id="slide_1">...</div>
-            <div class="slide" id="slide_2">...</div>
-            <div class="slide" id="slide_3">...</div>
+            <div class="slide" id="slide_1">Slide One</div>
+            <div class="slide" id="slide_2">Slide Two</div>
+            <div class="slide" id="slide_3">Slide Three</div>
         </div>
         <div class="carousel-controls">
             <button onclick="prev_slide()">&#10094;</button>
@@ -246,11 +247,11 @@ Auth: Nicklas Vraa
     </section>
 
     <section id="welcome" class="text-section">
-        <h1 id="welcome-heading">...</h1>
-        <p id="welcome-text">...</p>
+        <h1 id="welcome-heading">Welcome to Scaffold</h1>
+        <p id="welcome-text">Our mission is to provide everyone with the opportunity to own a home - We do this by offering built-to-order tiny homes.</p>
         <h2>Why Choose a Scaffold Tiny Home?</h2>
 
-        <p>The tiny house movement is growing rapidly as people seek a simpler, more intentional lifestyle. The benefits of <b>traditional tiny houses</b> are well established... <button class="expand">&#x25BC;</button></p>
+        <p>The tiny house movement is growing rapidly as people seek a simpler, more intentional lifestyle. The benefits of any <b>traditional tiny house</b> are well established... <button class="expand">&#x25BC;</button></p>
 
         <span class="details"><ul>
             <li><b>Lower Cost</b>: Smaller size means reduced construction, maintenance, and utility costs. Heating is more efficient, with less energy needed to maintain a comfortable temperature, leading to long-term savings.</li>
@@ -259,13 +260,13 @@ Auth: Nicklas Vraa
             <li><b>A Simpler Existence</b>: Minimalism forces thoughtful organization and prioritizing experiences over possessions, resulting in a less cluttered, more mindful life focused on what truly matters.</li>
         </ul></span>
 
-        <p><b>Scaffold Tiny Homes</b> greatly emphasizes these strengths. We do this by digitally modelling homes in 3D CAD software - down to the last nail - such that the model ultimately contains absolutely all information about the home. This provide us and you with a set of additional advantages... <button class="expand">&#x25BC;</button></p>
+        <p><b>Scaffold Tiny Homes</b> greatly emphasize these strengths. We do this by <b>digitally modelling</b> all homes in 3D-CAD software - down to the last nail - such that the model ultimately contains absolutely all information about the build. This provide us, and therefore you, with a set of additional advantages... <button class="expand">&#x25BC;</button></p>
 
         <span class="details"><ul>
-            <li><b>Better Designs</b>: We can rapidly iterate on designs to determine the ideal combination of components that will form the perfect home.</li>
+            <li><b>Better Designs</b>: We can rapidly iterate on designs to determine the ideal combination of components that will form the perfect home without investing real-world materials. </li>
             <li><b>Better Planning</b>: We can precisely plan out the optimal schedule for every cut, brush stroke and swing of the hammer, eliminating wasted effort and misunderstandings, while enabling parallellized construction.</li>
             <li><b>Complete Optimization</b>: We can use custom software to fully optimize the use of stock material that come in standard dimensions, such as timber beams, plywood sheets, batts insulation, wiring etc, eliminating waste.</li>
-            <li><b>Accurate estimates</b>: We know the exact bill-of-materials, as well as the volume and mass of every component, prior to construction which allows making estimates that are decimal-accurate.</li>
+            <li><b>Accurate estimates</b>: We know the exact bill-of-materials, as well as the volume and mass of every component, prior to construction, which enables estimates that are decimal-accurate.</li>
             <li><b>Absolute Repairability</b>: We can provide a fully detailed and illustrated manual that allows the home owner to do their own repairs, modifications and upgrades - Having a 3D model is functionally equivalent to having x-ray vision.</li>
         </ul></span>
     </section>
@@ -273,8 +274,8 @@ Auth: Nicklas Vraa
     <section id="design" class="design-section">
         <div class="split-view">
             <div class="choices">
-                <h2 id="design-heading">...</h2>
-                <p id="design-text">...</p>
+                <h1 id="design-heading">Customize your home</h2>
+                <p id="design-text">Choose how you want your home built and see a preview to the right &#8594;</p>
                 <div class="radio-group-horizontal">
                     <h3 id="standards-heading">Standard</h3>
                     <label><input type="radio" name="standards-options" onclick="update_preview()"> <span id="standards-option-1">DK</span></label>
@@ -283,35 +284,34 @@ Auth: Nicklas Vraa
                     <label><input type="radio" name="standards-options" onclick="update_preview()"> <span id="standards-option-4">US</span></label>
                 </div>
                 <div class="radio-group">
-                    <h3 id="model-heading">...</h3>
-                    <label><input type="radio" name="model-options" onclick="update_preview()"> <span id="model-option-1">...</span></label>
-                    <label><input type="radio" name="model-options" onclick="update_preview()"> <span id="model-option-2">...</span></label>
-                    <label><input type="radio" name="model-options" onclick="update_preview()"> <span id="model-option-3">...</span></label>
+                    <h3 id="model-heading">Model</h3>
+                    <label><input type="radio" name="model-options" onclick="update_preview()"> <span id="model-option-1">The Pico</span></label>
+                    <label><input type="radio" name="model-options" onclick="update_preview()"> <span id="model-option-2">The Nano</span></label>
+                    <label><input type="radio" name="model-options" onclick="update_preview()"> <span id="model-option-3">The Micro</span></label>
                 </div>
                 <div class="radio-group">
-                    <h3 id="insulation-heading">...</h3>
-                    <label><input type="radio" name="insulation-options" onclick="update_preview()"> <span id="insulation-option-1">...</span></label>
-                    <label><input type="radio" name="insulation-options" onclick="update_preview()"> <span id="insulation-option-2">...</span></label>
+                    <h3 id="insulation-heading">Insulation</h3>
+                    <label><input type="radio" name="insulation-options" onclick="update_preview()"> <span id="insulation-option-1">190mm (7-1/2")</span></label>
+                    <label><input type="radio" name="insulation-options" onclick="update_preview()"> <span id="insulation-option-2">95mm (3-3/4")</span></label>
                 </div>
                 <div class="radio-group">
-                    <h3 id="second-floor-heading">...</h3>
-                    <label><input type="radio" name="second-floor-options" onclick="update_preview()"> <span id="second-floor-option-1">...</span></label>
-                    <label><input type="radio" name="second-floor-options" onclick="update_preview()"> <span id="second-floor-option-2">...</span></label>
-                    <label><input type="radio" name="second-floor-options" onclick="update_preview()"> <span id="second-floor-option-3">...</span></label>
+                    <h3 id="second-floor-heading">2nd floor</h3>
+                    <label><input type="radio" name="second-floor-options" onclick="update_preview()"> <span id="second-floor-option-1">Without 2nd floor</span></label>
+                    <label><input type="radio" name="second-floor-options" onclick="update_preview()"> <span id="second-floor-option-2">With half-height 2nd floor</span></label>
+                    <label><input type="radio" name="second-floor-options" onclick="update_preview()"> <span id="second-floor-option-3">With full-height 2nd floor</span></label>
                 </div>
                 <div class="radio-group">
-                    <h3 id="addons-heading">...</h3>
-                    <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-1">...</span></label>
-                    <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-2">...</span></label>
-                    <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-3">...</span></label>
-                    <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-4">...</span></label>
+                    <h3 id="addons-heading">Off-grid addons</h3>
+                    <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-1">Adjustable solar panel mounting rack</span></label>
+                    <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-2">Complete solar panel system</span></label>
+                    <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-3">Roof-mounted, fold-down windmill</span></label>
+                    <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-4">Rain water collection and filtration system</span></label>
                 </div>
                 <div class="radio-group">
-                    <h3 id="interior-heading">...</h3>
-                    <label><input type="checkbox" name="interior-options" onclick="update_preview()"> <span id="interior-option-1">...</span></label>
-                    <label><input type="checkbox" name="interior-options" onclick="update_preview()"> <span id="interior-option-2">...</span></label>
-                    <label><input type="checkbox" name="interior-options" onclick="update_preview()"> <span id="interior-option-3">...</span></label>
-                    <label><input type="checkbox" name="interior-options" onclick="update_preview()"> <span id="interior-option-4">...</span></label>
+                    <h3 id="interior-heading">Interior</h3>
+                    <label><input type="checkbox" name="interior-options" onclick="update_preview()"> <span id="interior-option-1">Built-in kitchen</span></label>
+                    <label><input type="checkbox" name="interior-options" onclick="update_preview()"> <span id="interior-option-2">Built-in living room furniture</span></label>
+                    <label><input type="checkbox" name="interior-options" onclick="update_preview()"> <span id="interior-option-3">built-in bedroom furniture</span></label>
                 </div>
             </div>
             <div class="preview">
@@ -334,70 +334,7 @@ Auth: Nicklas Vraa
         let language = "da";
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
-        const TEXT = {
-            en: {
-                welcome_menu_entry: "Welcome",
-                design_menu_entry: "Design",
-                about_menu_entry: "About",
-                contact_menu_entry: "Contact",
-                slide_1: "Slide one",
-                slide_2: "Slide two",
-                slide_3: "Slide three",
-                welcome_heading: "Welcome to Scaffold",
-                welcome_text: "Our mission is to provide everyone with the opportunity to own a home - We do this by offering built-to-order tiny homes.",
-                welcome_text_2: "Why Choose a Scaffold Tiny Home?",
-                design_heading: "Customize your home",
-                design_text: "Choose how you want your home built and see a preview to the right.",
-                model_heading: "Model",
-                model_option_1: "The Pico",
-                model_option_2: "The Nano",
-                model_option_3: "The Micro",
-                insulation_heading: "Insulation",
-                insulation_option_1: "7-1/2 inches",
-                insulation_option_2: "3-3/4 inches",
-                second_floor_heading: "2nd floor",
-                second_floor_option_1: "Without 2nd floor",
-                second_floor_option_2: "With half-height 2nd floor",
-                second_floor_option_3: "With full-height 2nd floor",
-                addons_heading: "Off-grid addons",
-                addons_option_1: "Adjustable solar panel mounting rack",
-                addons_option_2: "Complete solar panel system",
-                addons_option_3: "Roof-mounted, fold-down windmill",
-                addons_option_4: "Rain water collection and filtration system",
-            },
-            da: {
-                welcome_menu_entry: "Velkommen",
-                design_menu_entry: "Design",
-                about_menu_entry: "Om Os",
-                contact_menu_entry: "Kontakt",
-                slide_1: "Slide et",
-                slide_2: "Slide to",
-                slide_3: "Slide tre",
-                welcome_heading: "Velkommen til Scaffold",
-                welcome_text: "Velkommen til Scaffold! Dette er en simpel, interaktiv Single Page Application (SPA) bygget uden brug af eksterne biblioteker eller rammer.",
-                design_heading: "Skræddersy dit hjem",
-                design_text: "Vælg hvordan dit hjem skal bygges, og se et preview i højre side.",
-                model_heading: "Model",
-                model_option_1: "The Pico",
-                model_option_2: "The Nano",
-                model_option_3: "The Micro",
-                insulation_heading: "Isolering",
-                insulation_option_1: "190 mm",
-                insulation_option_2: "95 mm",
-                second_floor_heading: "2. sal",
-                second_floor_option_1: "Uden 2. sal",
-                second_floor_option_2: "Med halv-højde 2. sal",
-                second_floor_option_3: "Med fuld-højde 2. sal",
-                addons_heading: "Off-grid tilføjelser",
-                addons_option_1: "Justérbart opsats til solcellepaneler",
-                addons_option_2: "Komplet solcelle-system",
-                addons_option_3: "Tagmonteret, fold-ned vindmølle",
-                addons_option_4: "Regnvandsopsamling og filtrering system",
-            }
-        };
-        window.onload = function() {
-            toggle_language();
-        };
+        const TEXT = { en: { /* Dict. */}, da: { /* Dict. */}};
 
         function home() {
             window.scrollTo({top: 0, behavior: "smooth"});
@@ -446,54 +383,6 @@ Auth: Nicklas Vraa
             });
         });
 
-        function toggle_language() {
-            if (language === "en") { language = "da"; }
-            else { language = "en"; }
-            set_text(language);
-        }
-
-        function set_text(language) {
-            const text = TEXT[language];
-
-            document.getElementById("slide_1").textContent = text.slide_1;
-            document.getElementById("slide_2").textContent = text.slide_2;
-            document.getElementById("slide_3").textContent = text.slide_3;
-
-            document.getElementById("welcome-link").textContent = text.welcome_menu_entry;
-
-            document.getElementById("welcome-heading").textContent = text.welcome_heading;
-            document.getElementById("welcome-text").textContent = text.welcome_text;
-
-            document.getElementById("design-link").textContent = text.design_menu_entry;
-
-            document.getElementById("design-heading").textContent = text.design_heading;
-            document.getElementById("design-text").textContent = text.design_text;
-
-            document.getElementById("model-heading").textContent = text.model_heading;
-            document.getElementById("model-option-1").textContent = text.model_option_1;
-            document.getElementById("model-option-2").textContent = text.model_option_2;
-            document.getElementById("model-option-3").textContent = text.model_option_3;
-
-            document.getElementById("insulation-heading").textContent = text.insulation_heading;
-            document.getElementById("insulation-option-1").textContent = text.insulation_option_1;
-            document.getElementById("insulation-option-2").textContent = text.insulation_option_2;
-
-            document.getElementById("second-floor-heading").textContent = text.second_floor_heading;
-            document.getElementById("second-floor-option-1").textContent = text.second_floor_option_1;
-            document.getElementById("second-floor-option-2").textContent = text.second_floor_option_2;
-            document.getElementById("second-floor-option-3").textContent = text.second_floor_option_3;
-
-            document.getElementById("addons-heading").textContent = text.addons_heading;
-            document.getElementById("addons-option-1").textContent = text.addons_option_1;
-            document.getElementById("addons-option-2").textContent = text.addons_option_2;
-            document.getElementById("addons-option-3").textContent = text.addons_option_3;
-            document.getElementById("addons-option-4").textContent = text.addons_option_4;
-
-            document.getElementById("about-link").textContent = text.about_menu_entry;
-
-            document.getElementById("contact-link").textContent = text.contact_menu_entry;
-        }
-
         function update_carousel() {
             const carouselContent = document.getElementById("carousel");
             carouselContent.style.transform = `translateX(-${currentSlide * 100}%)`;
@@ -512,6 +401,7 @@ Auth: Nicklas Vraa
         function update_preview() {
             /* TODO */
         }
+
     </script>
 </div></body>
 </html>

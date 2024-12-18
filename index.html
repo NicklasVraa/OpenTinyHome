@@ -151,6 +151,21 @@ Auth: Nicklas Vraa
         input[type="radio"]:checked, input[type="checkbox"]:checked {
             background-color: #ffffff;
         }
+        li {
+            margin-bottom: 10px;
+        }
+
+        details .list {
+            overflow: hidden; /* Prevent content from overflowing */
+            max-height: 0; /* Start collapsed */
+            transition: max-height 0.4s ease; /* Smooth transition */
+        }
+        details[open] .list {
+            max-height: 500px;
+        }
+        summary::marker {
+            font-size: 24px; /* Adjust the size of the arrow */
+        }
 
         /* Media query for smaller screens */
         @media screen and (max-width: 768px) {
@@ -225,6 +240,29 @@ Auth: Nicklas Vraa
     <section id="welcome" class="text-section">
         <h1 id="welcome-heading">...</h1>
         <p id="welcome-text">...</p>
+        <h2>Why Choose a Scaffold Tiny Home?</h2>
+        <p>The tiny house movement is growing rapidly as people seek a simpler, more intentional lifestyle. The benefits of traditional Tiny Houses are well established:</p>
+
+        <details><summary>Read more</summary><div class="list"><ul>
+            <li><b>Lower Cost</b>: Smaller size means reduced construction, maintenance, and utility costs. Heating is more efficient, with less energy needed to maintain a comfortable temperature, leading to long-term savings.</li>
+
+            <li><b>Smaller Footprint</b>: Tiny homes require fewer materials, consume less energy, and leave a smaller footprint, making them more sustainable. Eco-friendly materials and off-grid options can further reduce your carbon footprint.</li>
+
+            <li><b>Increased Mobility</b>: Whether on wheels or a permanent foundation, a tiny home offers unmatched freedom. It’s perfect for those wanting to explore new locations or live closer to nature.</li>
+
+            <li><b>A Simpler Existence</b>: Minimalism forces thoughtful organization and prioritizing experiences over possessions, resulting in a less cluttered, more mindful life focused on what truly matters.</li>
+        </ul></div></details>
+
+        <p><b>Scaffold Tiny Homes</b> greatly emphasizes these strengths. We do this by digitally modelling homes in 3D CAD software - down to the last nail - such that the model ultimately contains absolutely all information about the home. This provide us and you with a set of additional advantages:</p>
+
+        <details><summary>...</summary><div class="list"><ul>
+            <li><b>Better Designs</b>: We can rapidly iterate on designs to determine the ideal combination of components that will form the perfect home.</li>
+            <li><b>Better Planning</b>: We can precisely plan out the optimal schedule for every cut, brush stroke and swing of the hammer, eliminating wasted effort and misunderstandings, while enabling parallellized construction.</li>
+            <li><b>Complete Optimization</b>: We can use custom software to fully optimize the use of stock material that come in standard dimensions, such as timber beams, plywood sheets, batts insulation, wiring etc, eliminating waste.</li>
+            <li><b>Accurate estimates</b>: We know the exact bill-of-materials, as well as the volume and mass of every component, prior to construction which allows making estimates that are decimal-accurate.</li>
+            <li><b>Absolute Repairability</b>: We can provide a fully detailed and illustrated manual that allows the home owner to do their own repairs, modifications and upgrades - Having a 3D model is functionally equivalent to having x-ray vision.</li>
+        </ul></div></details>
+
     </section>
     <section id="design" class="design-section">
         <div class="split-view">
@@ -297,7 +335,8 @@ Auth: Nicklas Vraa
                 slide_2: "Slide two",
                 slide_3: "Slide three",
                 welcome_heading: "Welcome to Scaffold",
-                welcome_text: "Do you dream of owning your very own tiny home? You've come to the right place! Customize your tiny home and have it made to order.",
+                welcome_text: "Our mission is to provide everyone with the opportunity to own a home - We do this by offering built-to-order tiny homes.",
+                welcome_text_2: "Why Choose a Scaffold Tiny Home?",
                 design_heading: "Customize your home",
                 design_text: "Choose how you want your home built and see a preview to the right.",
                 model_heading: "Model",

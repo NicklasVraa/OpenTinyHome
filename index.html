@@ -118,16 +118,16 @@ Auth: Nicklas Vraa
         .split-view {
             display: flex; flex-direction: row;
         }
-        .left-panel {
+        .choices {
             flex: 1; display: flex; flex-direction: column;
             padding: 30px;
             background-color: #111111; color: #ffffff;
         }
-        .right-panel {
+        .preview {
             flex: 1; display: flex; justify-content: center; align-items: center;
             background-color: #181818; color: #ffffff;
         }
-        .right-panel img {
+        .preview img {
             max-width: 90%; max-height: 90%; border: 2px solid #ccc;
         }
         .radio-group {
@@ -175,7 +175,7 @@ Auth: Nicklas Vraa
                 z-index: 1000;
             }
             #menu-links.active {
-                display: flex; /* Show the menu when active */
+                display: flex;
             }
             #menu-links a {
                 color: white;
@@ -184,30 +184,36 @@ Auth: Nicklas Vraa
             .split-view {
                 flex-direction: column;
             }
-            .right-panel {
+            .preview {
                 order: 2;
             }
 
-            .left-panel {
-                order: 1; /* Left panel stays on top */
+            .choices {
+                order: 1;
             }
         }
-        /* Style for the disclosure button */
         .expand {
             background: none; border: none; color: #FFFFFF;
             font-size: 1em; cursor: pointer; padding: 0;
         }
         .details {
-            padding-bottom: 4px;
+            display: none;
+            overflow: hidden;
+            max-height: 0;
+        }
+        .details.show {
+            display: block;
+            max-height: 500px;
+            padding-bottom: 10px;
         }
 
     </style>
 </head>
 <body><div class="container">
     <div class="menu-bar">
-        <button id="burger-menu" onclick="toggle_menu()" aria-label="Toggle Menu">
-            <i class="fas fa-bars"></i>
-        </button>
+
+        <button id="burger-menu" onclick="toggle_menu()" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+
         <nav id="menu-links">
             <a id="home" class="menu-link" onclick="home()">Scaffold</a>
             <a href="#welcome" class="menu-link" onclick="navigate(event, 'welcome')"><span id="welcome-link">...</span></a>
@@ -215,14 +221,18 @@ Auth: Nicklas Vraa
             <a href="#about" class="menu-link" onclick="navigate(event, 'about')"><span id="about-link">...</span></a>
             <a href="#contact" class="menu-link" onclick="navigate(event, 'contact')"><span id="contact-link">...</span></a>
         </nav>
+
         <div class="social-icons">
             <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
             <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
             <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
+
         <button id="language-toggle" onclick="toggle_language()">EN/DA</button>
     </div>
+
     <button id="scroll-to-top" onclick="home()">&#8679;</button>
+
     <section id="showcase" class="media-section">
         <div class="carousel" id="carousel">
             <div class="slide" id="slide_1">...</div>
@@ -234,32 +244,35 @@ Auth: Nicklas Vraa
             <button onclick="next_slide()">&#10095;</button>
         </div>
     </section>
+
     <section id="welcome" class="text-section">
         <h1 id="welcome-heading">...</h1>
         <p id="welcome-text">...</p>
         <h2>Why Choose a Scaffold Tiny Home?</h2>
-        <p>The tiny house movement is growing rapidly as people seek a simpler, more intentional lifestyle. The benefits of traditional Tiny Houses are well established... <button class="expand" data-target="details-1" onclick="expand()">&#x25BC;</button></p>
-        <span id="details-1" class="details" style="display:none;"><ul>
+
+        <p>The tiny house movement is growing rapidly as people seek a simpler, more intentional lifestyle. The benefits of <b>traditional tiny houses</b> are well established... <button class="expand">&#x25BC;</button></p>
+
+        <span class="details"><ul>
             <li><b>Lower Cost</b>: Smaller size means reduced construction, maintenance, and utility costs. Heating is more efficient, with less energy needed to maintain a comfortable temperature, leading to long-term savings.</li>
             <li><b>Smaller Footprint</b>: Tiny homes require fewer materials, consume less energy, and leave a smaller footprint, making them more sustainable. Eco-friendly materials and off-grid options can further reduce your carbon footprint.</li>
             <li><b>Increased Mobility</b>: Whether on wheels or a permanent foundation, a tiny home offers unmatched freedom. It’s perfect for those wanting to explore new locations or live closer to nature.</li>
             <li><b>A Simpler Existence</b>: Minimalism forces thoughtful organization and prioritizing experiences over possessions, resulting in a less cluttered, more mindful life focused on what truly matters.</li>
         </ul></span>
 
-        <p><b>Scaffold Tiny Homes</b> greatly emphasizes these strengths. We do this by digitally modelling homes in 3D CAD software - down to the last nail - such that the model ultimately contains absolutely all information about the home. This provide us and you with a set of additional advantages... <button class="expand" data-target="details-2" onclick="expand()">&#x25BC;</button></p>
+        <p><b>Scaffold Tiny Homes</b> greatly emphasizes these strengths. We do this by digitally modelling homes in 3D CAD software - down to the last nail - such that the model ultimately contains absolutely all information about the home. This provide us and you with a set of additional advantages... <button class="expand">&#x25BC;</button></p>
 
-        <span id="details-2" class="details" style="display:none;"><ul>
+        <span class="details"><ul>
             <li><b>Better Designs</b>: We can rapidly iterate on designs to determine the ideal combination of components that will form the perfect home.</li>
             <li><b>Better Planning</b>: We can precisely plan out the optimal schedule for every cut, brush stroke and swing of the hammer, eliminating wasted effort and misunderstandings, while enabling parallellized construction.</li>
             <li><b>Complete Optimization</b>: We can use custom software to fully optimize the use of stock material that come in standard dimensions, such as timber beams, plywood sheets, batts insulation, wiring etc, eliminating waste.</li>
             <li><b>Accurate estimates</b>: We know the exact bill-of-materials, as well as the volume and mass of every component, prior to construction which allows making estimates that are decimal-accurate.</li>
             <li><b>Absolute Repairability</b>: We can provide a fully detailed and illustrated manual that allows the home owner to do their own repairs, modifications and upgrades - Having a 3D model is functionally equivalent to having x-ray vision.</li>
         </ul></span>
-
     </section>
+
     <section id="design" class="design-section">
         <div class="split-view">
-            <div class="left-panel">
+            <div class="choices">
                 <h2 id="design-heading">...</h2>
                 <p id="design-text">...</p>
                 <div class="radio-group-horizontal">
@@ -301,19 +314,22 @@ Auth: Nicklas Vraa
                     <label><input type="checkbox" name="interior-options" onclick="update_preview()"> <span id="interior-option-4">...</span></label>
                 </div>
             </div>
-            <div class="right-panel">
+            <div class="preview">
                 <img id="selected-image" src="res/image1.jpg" alt="Preview" />
             </div>
         </div>
     </section>
+
     <section id="about" class="text-section">
         <h1 id="about-heading">...</h1>
         <p id="about-text">...</p>
     </section>
+
     <section id="contact" class="text-section">
         <h1 id="contact-heading">...</h1>
         <p id="contact-text">...</p>
     </section>
+
     <script>
         let language = "da";
         let currentSlide = 0;
@@ -387,20 +403,19 @@ Auth: Nicklas Vraa
             window.scrollTo({top: 0, behavior: "smooth"});
         }
 
-        function expand(event) {
-            var button = event.target;
-            var targetId = button.getAttribute("data-target");
-            var content = document.getElementById(targetId);
+        document.querySelectorAll('.expand').forEach(button => {
+            button.addEventListener('click', function() {
+                const details = this.closest('p').nextElementSibling;
 
-            // Toggle visibility
-            if (content.style.display === "none") {
-                content.style.display = "block";
-                button.innerHTML = "&#x25B2;";
-            } else {
-                content.style.display = "none";
-                button.innerHTML = "&#x25BC;";
-            }
-        }
+                if (details.classList.contains('show')) {
+                    details.classList.remove('show');
+                    this.innerHTML = '&#x25BC;';
+                } else {
+                    details.classList.add('show');
+                    this.innerHTML = '&#x25B2;';
+                }
+            });
+        });
 
         var buttons = document.querySelectorAll(".expand");
         buttons.forEach(function(button) {
@@ -408,7 +423,7 @@ Auth: Nicklas Vraa
         });
 
         function navigate(event, sectionId) {
-            event.preventDefault(); // Prevent the default anchor link behavior
+            event.preventDefault();
             const section = document.getElementById(sectionId);
             if (section) {
                 section.scrollIntoView({ behavior: "smooth" });
@@ -426,12 +441,11 @@ Auth: Nicklas Vraa
 
             menuLinks.forEach(link => {
                 link.addEventListener("click", () => {
-                    menu.classList.remove("active"); /* Collapse menu. */
+                    menu.classList.remove("active");
                 });
             });
         });
 
-        /* Switch language of entire page. */
         function toggle_language() {
             if (language === "en") { language = "da"; }
             else { language = "en"; }

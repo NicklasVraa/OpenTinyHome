@@ -10,16 +10,15 @@ Auth: Nicklas Vraa
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scaffold</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
     <style>
         body, html {
             margin: 0; padding: 0; width: 100%; height: 100%;
             box-sizing: border-box; background-color: #000000;
-            font-family: Helvetica, sans-serif;
-            line-height: 1.4rem;
+            font-family: Helvetica, sans-serif; line-height: 1.4rem;
         }
         .container {
-            max-width: 1200px; margin: 0 auto;
-            box-sizing: border-box;
+            max-width: 1200px; margin: 0 auto; box-sizing: border-box;
         }
         h1 {
             font-size: 2rem; margin: 10px 0px 10px;
@@ -47,12 +46,8 @@ Auth: Nicklas Vraa
             text-decoration: underline;
         }
         #burger-menu {
-            display: none;
-            background: none;
-            color: white;
-            font-size: 20px;
-            border: none;
-            cursor: pointer;
+            display: none; background: none; color: white; font-size: 20px;
+            border: none; cursor: pointer;
         }
         #menu-links {
             display: flex;
@@ -110,8 +105,7 @@ Auth: Nicklas Vraa
             color: #ffffff;
         }
         .text-section {
-            background-color: #151515; color: #ffffff;
-            padding: 30px;
+            background-color: #151515; color: #ffffff; padding: 30px;
         }
         .design-section {
             padding: 0px;
@@ -144,8 +138,7 @@ Auth: Nicklas Vraa
             margin: 0px 20px 0px 0px;
         }
         input[type="radio"], input[type="checkbox"] {
-            appearance: none;
-            width: 12px; height: 12px;
+            appearance: none; width: 12px; height: 12px;
             border: 1px solid #ffffff; border-radius: 50%;
             background: #000000; cursor: pointer; margin-right: 10px;
         }
@@ -155,32 +148,69 @@ Auth: Nicklas Vraa
         li {
             margin-bottom: 12px;
         }
+        .expand {
+            background: none; border: none; color: #FFFFFF;
+            font-size: 1em; cursor: pointer; padding: 0;
+        }
+        .details {
+            display: none; overflow: hidden; max-height: 0;
+        }
+        .details.show {
+            display: block; max-height: 1000px;
+        }
+        ul, ol {
+            margin: 0; padding-bottom: 10px;
+        }
+        ol li::marker {
+            font-weight: bold;
+        }
+        .people {
+            display: flex; flex-direction: column; gap: 20px; padding-top: 10px
+        }
+        .person {
+            display: flex; align-items: center; padding: 20px;
+            background-color: #111111;
+        }
+        .desc {
+            flex: 3; padding-right: 10px;
+        }
+        .name-and-links {
+            display: flex; align-items: center;
+        }
+        .name-and-links h3 {
+            margin-right: 15px;
+        }
+        .links a {
+            margin-right: 10px; font-size: 1em;
+            color: #ffffff; text-decoration: none;
+        }
+        .profile-pic {
+            flex: 1; text-align: center;
+        }
+        .profile-pic img {
+            max-width: 100%; max-height: 100%;
+        }
+        #contact {
+            background-color: #111111;
+        }
 
-        /* Media query for smaller screens */
         @media screen and (max-width: 768px) {
             .menu-bar {
                 padding: 10px 10px;
             }
             #burger-menu {
-                display: block; /* Show burger icon */
+                display: block;
             }
             #menu-links {
-                display: none;
-                flex-direction: column;
-                background-color: #000;
-                position: absolute;
-                top: 40px;
-                left: 0px;
-                width: 150px;
-                padding: 0px 0px 20px 30px;
-                z-index: 1000;
+                display: none; flex-direction: column; z-index: 1000;
+                background-color: #000; position: absolute;
+                top: 40px; left: 0px; width: 150px; padding: 0px 0px 20px 30px;
             }
             #menu-links.active {
                 display: flex;
             }
             #menu-links a {
-                color: white;
-                padding: 10px 0px;
+                color: white; padding: 10px 0px;
             }
             .split-view {
                 flex-direction: column;
@@ -188,31 +218,13 @@ Auth: Nicklas Vraa
             .preview {
                 order: 2;
             }
-
             .choices {
                 order: 1;
             }
         }
-        .expand {
-            background: none; border: none; color: #FFFFFF;
-            font-size: 1em; cursor: pointer; padding: 0;
-        }
-        .details {
-            display: none;
-            overflow: hidden;
-            max-height: 0;
-        }
-        .details.show {
-            display: block;
-            max-height: 1000px;
-        }
-        ul {
-            margin: 0;
-            padding-bottom: 10px;
-        }
-
     </style>
 </head>
+
 <body><div class="container">
     <div class="menu-bar">
 
@@ -250,9 +262,10 @@ Auth: Nicklas Vraa
     </section>
 
     <section id="welcome" class="text-section">
-        <h1 id="welcome-heading">Welcome to Scaffold</h1>
-        <p id="welcome-text">Our mission is to provide everyone with the opportunity to own a home - We do this by offering built-to-order tiny homes.</p>
-        <h2>Why Choose a Scaffold Tiny Home?</h2>
+        <h1 id="welcome-heading">Scaffold Tiny Homes</h1>
+        <p id="welcome-text">Our mission is to provide <b>everyone</b> with the opportunity to own a home - We do this by offering built-to-order tiny homes.</p>
+
+        <h2>Why a Scaffold Tiny Home?</h2>
 
         <p>The tiny house movement is growing rapidly as people seek a simpler, more intentional lifestyle. The benefits of any <b>traditional tiny house</b> are well established: <button class="expand"><b><i> (show more)</i></b></button></p>
 
@@ -282,7 +295,7 @@ Auth: Nicklas Vraa
             <li><b>Modularity and Expandibility</b>: Base modules (ground floors), that always house all essential utilities, can be expanded vertically. The roof assembly easily detaches to slot in additional modules, then reattaches, because of the layout of both framing and electrical wiring.</li>
         </ul>
 
-        <h2>Models</h2>
+        <h2>Scaffold Models</h2>
         <!-- These dimensions were chosen to minimize material waste, as they correspond with 3, 4 and 5 full-width plywood sheets. -->
         <p>...</p>
     </section>
@@ -337,13 +350,81 @@ Auth: Nicklas Vraa
     </section>
 
     <section id="about" class="text-section">
-        <h1 id="about-heading">...</h1>
-        <p id="about-text">...</p>
+        <h1>About Us</h1>
+        <p>Scaffold Tiny Homes is a family-run business. We are perfectionists and completionists, and we love building and see ideas turn into reality.</p>
+
+        <h2>Motivation</h2>
+        <p><b>Our motivation is twofold</b>:</p>
+        <ol>
+            <li>We strive to live a simpler lifestyle, where  freedom takes precedence over material possessions. Achieving greater freedom in life begins with reducing recurring expenses, making full-time work a choice rather than a necessity. This goal is most effectively and sustainably realized by downsizing and taking control of our basic needs. We aim to enable others to practice this way of life to whatever degree they see fit.</li>
+
+            <li>The state of the global housing market has made home ownership an increasingly unattainable dream for many. To provide a viable alternative to the traditional housing market, the barrier-of-entry for home building must be lowered all the way to the ground floor. Our mission is to achieve this by offering complete homes - compact in form yet full of potential - that are fully self-serviceable and upgradeable, with documentation that assumes no prior knowledge on part of the home owner.</li>
+        </ol>
+
+        <h2>Who Are We?</h2>
+        <div class="people">
+            <div class="person">
+                <div class="desc">
+                    <div class="name-and-links">
+                        <h3>Person 1</h3>
+                        <div class="links">
+                            <a href="https://linkedin.com/in/person1" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/person1" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <p>MSc. Electrical Engineering, specializing in embedded machine learning, energy optimization, simulation, automation, and CAD modelling.</p>
+                    <p>2+ years of experience restoring homes. Avid tiny house and off-grid enthusiast.</p>
+                </div>
+                <div class="profile-pic">
+                    <img src="person1.jpg" alt="Person 1 Profile Picture" onerror="this.onerror=null; this.src='res/default-profile-pic.png';" />
+                </div>
+            </div>
+
+            <div class="person">
+                <div class="desc">
+                    <div class="name-and-links">
+                        <h3>Person 2</h3>
+                        <div class="links">
+                            <a href="https://linkedin.com/in/person2" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/person2" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <p>MSc. Computer Engineering, specializing in server architecture, system-level programming, micro-computing, and human interface design.</p>
+                    <p>2+ years of experience restoring homes.</p>
+                </div>
+                <div class="profile-pic">
+                    <img src="person2.jpg" alt="Person 2 Profile Picture" onerror="this.onerror=null; this.src='res/default-profile-pic.png';" />
+                </div>
+            </div>
+
+            <div class="person">
+                <div class="desc">
+                    <div class="name-and-links">
+                        <h3>Person 3</h3>
+                        <div class="links">
+                            <a href="https://linkedin.com/in/person3" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <p>Certified smith, decades of practical DIY experience in carpentry, plumbing and electrics, mechanics, etc., and 15+ years as production manager at Riantics/Körber supply chain solutions.</p>
+                    <p>Has fully restored 5+ family-sized homes.</p>
+                </div>
+                <div class="profile-pic">
+                    <img src="person3.jpg" alt="Person 3 Profile Picture" onerror="this.onerror=null; this.src='res/default-profile-pic.png';" />
+                </div>
+            </div>
+        </div>
+
+        <h2>Roadmap</h2>
+        <p>We will be maintaining an up-to-date roadmap, outlining the direction in which we want to take this business.</p>
     </section>
 
     <section id="contact" class="text-section">
-        <h1 id="contact-heading">...</h1>
-        <p id="contact-text">...</p>
+        <h1>Contact</h1>
+        <p> Use the customizer to tailor your tiny home to your wishes, copy the generated code into an email and send it to <b>scaffold@proton.me.</b></p>
+
+        <p>At the moment, we are in the start-up phase, but you'll be placed on an <b>informal waiting list</b>. We use this to guage interest in the various configurations. When we are ready to build, we will notify you.</p>
+
+        <p>We want this endeavor to be community-driven, e.g. we appreciate ideas, designs and feedback. If you want to participate in building your own home, you are also more than welcome to do so.</p>
     </section>
 
     <script>
@@ -370,16 +451,13 @@ Auth: Nicklas Vraa
             });
         });
 
-        var buttons = document.querySelectorAll(".expand");
-        buttons.forEach(function(button) {
-            button.addEventListener("click", expand);
-        });
-
         function navigate(event, sectionId) {
             event.preventDefault();
             const section = document.getElementById(sectionId);
             if (section) {
-                section.scrollIntoView({ behavior: "smooth" });
+                const headerHeight = document.getElementById("menu-links").offsetHeight;
+
+                window.scrollTo({top: section.offsetTop - headerHeight, behavior: "smooth" });
             }
         }
 

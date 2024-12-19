@@ -57,6 +57,7 @@ Auth: Nicklas Vraa
         }
         .social-icons a {
             text-decoration: none;
+            margin: 0px 10px;
         }
         .menu-bar button {
             background-color: #000000; color: #FFFFFF; margin-top: -4px;
@@ -125,22 +126,24 @@ Auth: Nicklas Vraa
         .preview img {
             max-width: 90%; max-height: 90%; border: 2px solid #ccc;
         }
-        .radio-group {
+        .choice-group {
             margin: 10px 0px 0px 0px;
         }
-        .radio-group label {
-            display: block; margin: 10px 0px;
+        .choice-group label {
+            display: block; margin: 5px 0px;
         }
-        .radio-group-horizontal {
-            margin: 10px 0px 0px 0px;
+        .choice-group-horizontal {
+            margin: 5px 0px;
         }
-        .radio-group-horizontal label {
+        .choice-group-horizontal label {
             margin: 0px 20px 0px 0px;
         }
         input[type="radio"], input[type="checkbox"] {
-            appearance: none; width: 12px; height: 12px;
-            border: 1px solid #ffffff; border-radius: 50%;
-            background: #000000; cursor: pointer; margin-right: 10px;
+            appearance: none; width: 14px; height: 14px;
+            border: 2px solid #ffffff; border-radius: 10%;
+            background: #111111; cursor: pointer;
+            margin: 0px 10px;
+            transform: translateY(1px);
         }
         input[type="radio"]:checked, input[type="checkbox"]:checked {
             background-color: #ffffff;
@@ -200,11 +203,12 @@ Auth: Nicklas Vraa
             }
             #burger-menu {
                 display: block;
+                margin-right: 20px;
             }
             #menu-links {
                 display: none; flex-direction: column; z-index: 1000;
                 background-color: #000; position: absolute;
-                top: 40px; left: 0px; width: 150px; padding: 0px 0px 20px 30px;
+                top: 40px; left: 0px; width: 100px; padding: 0px 0px 20px 30px;
             }
             #menu-links.active {
                 display: flex;
@@ -305,38 +309,38 @@ Auth: Nicklas Vraa
             <div class="choices">
                 <h1 id="design-heading">Customize your home</h2>
                 <p id="design-text">Choose how you want your home built and see a preview to the right &#8594;</p>
-                <div class="radio-group-horizontal">
+                <div class="choice-group-horizontal">
                     <h3 id="standards-heading">Standard</h3>
                     <label><input type="radio" name="standards-options" onclick="update_preview()"> <span id="standards-option-1">DK</span></label>
                     <label><input type="radio" name="standards-options" onclick="update_preview()"> <span id="standards-option-2">EU</span></label>
                     <label><input type="radio" name="standards-options" onclick="update_preview()"> <span id="standards-option-3">UK</span></label>
                     <label><input type="radio" name="standards-options" onclick="update_preview()"> <span id="standards-option-4">US</span></label>
                 </div>
-                <div class="radio-group">
+                <div class="choice-group">
                     <h3 id="model-heading">Model</h3>
                     <label><input type="radio" name="model-options" onclick="update_preview()"> <span id="model-option-1">The Pico</span></label>
                     <label><input type="radio" name="model-options" onclick="update_preview()"> <span id="model-option-2">The Nano</span></label>
                     <label><input type="radio" name="model-options" onclick="update_preview()"> <span id="model-option-3">The Micro</span></label>
                 </div>
-                <div class="radio-group">
+                <div class="choice-group">
                     <h3 id="insulation-heading">Insulation</h3>
                     <label><input type="radio" name="insulation-options" onclick="update_preview()"> <span id="insulation-option-1">190mm (7-1/2")</span></label>
                     <label><input type="radio" name="insulation-options" onclick="update_preview()"> <span id="insulation-option-2">95mm (3-3/4")</span></label>
                 </div>
-                <div class="radio-group">
+                <div class="choice-group">
                     <h3 id="second-floor-heading">2nd floor</h3>
                     <label><input type="radio" name="second-floor-options" onclick="update_preview()"> <span id="second-floor-option-1">Without 2nd floor</span></label>
                     <label><input type="radio" name="second-floor-options" onclick="update_preview()"> <span id="second-floor-option-2">With half-height 2nd floor</span></label>
                     <label><input type="radio" name="second-floor-options" onclick="update_preview()"> <span id="second-floor-option-3">With full-height 2nd floor</span></label>
                 </div>
-                <div class="radio-group">
+                <div class="choice-group">
                     <h3 id="addons-heading">Off-grid addons</h3>
                     <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-1">Adjustable solar panel mounting rack</span></label>
                     <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-2">Complete solar panel system</span></label>
                     <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-3">Roof-mounted, fold-down windmill</span></label>
                     <label><input type="checkbox" name="addons-options" onclick="update_preview()"> <span id="addons-option-4">Rain water collection and filtration system</span></label>
                 </div>
-                <div class="radio-group">
+                <div class="choice-group">
                     <h3 id="interior-heading">Interior</h3>
                     <label><input type="checkbox" name="interior-options" onclick="update_preview()"> <span id="interior-option-1">Built-in kitchen</span></label>
                     <label><input type="checkbox" name="interior-options" onclick="update_preview()"> <span id="interior-option-2">Built-in living room furniture</span></label>

@@ -204,7 +204,10 @@ Auth: Nicklas Vraa
         }
         .details.show {
             display: block;
-            max-height: 500px;
+            max-height: 1000px;
+        }
+        ul {
+            margin: 0;
             padding-bottom: 10px;
         }
 
@@ -251,7 +254,7 @@ Auth: Nicklas Vraa
         <p id="welcome-text">Our mission is to provide everyone with the opportunity to own a home - We do this by offering built-to-order tiny homes.</p>
         <h2>Why Choose a Scaffold Tiny Home?</h2>
 
-        <p>The tiny house movement is growing rapidly as people seek a simpler, more intentional lifestyle. The benefits of any <b>traditional tiny house</b> are well established... <button class="expand">&#x25BC;</button></p>
+        <p>The tiny house movement is growing rapidly as people seek a simpler, more intentional lifestyle. The benefits of any <b>traditional tiny house</b> are well established: <button class="expand"><b><i> (show more)</i></b></button></p>
 
         <span class="details"><ul>
             <li><b>Lower Cost</b>: Smaller size means reduced construction, maintenance, and utility costs. Heating is more efficient, with less energy needed to maintain a comfortable temperature, leading to long-term savings.</li>
@@ -260,7 +263,7 @@ Auth: Nicklas Vraa
             <li><b>A Simpler Existence</b>: Minimalism forces thoughtful organization and prioritizing experiences over possessions, resulting in a less cluttered, more mindful life focused on what truly matters.</li>
         </ul></span>
 
-        <p><b>Scaffold Tiny Homes</b> greatly emphasize these strengths. We do this by <b>digitally modelling</b> all homes in 3D-CAD software - down to the last nail - such that the model ultimately contains absolutely all information about the build. This provide us, and therefore you, with a set of additional advantages... <button class="expand">&#x25BC;</button></p>
+        <p><b>Scaffold Tiny Homes</b> greatly emphasize these strengths. We do this by <b>digitally modelling</b> all homes in 3D-CAD software - down to the last nail - such that the model ultimately contains absolutely all information about the build. This provide us, and therefore you, with a set of additional advantages: <button class="expand"><b><i> (show more)</i></b></button></p>
 
         <span class="details"><ul>
             <li><b>Better Designs</b>: We can rapidly iterate on designs to determine the ideal combination of components that will form the perfect home without investing real-world materials. </li>
@@ -269,6 +272,18 @@ Auth: Nicklas Vraa
             <li><b>Accurate estimates</b>: We know the exact bill-of-materials, as well as the volume and mass of every component, prior to construction, which enables estimates that are decimal-accurate.</li>
             <li><b>Absolute Repairability</b>: We can provide a fully detailed and illustrated manual that allows the home owner to do their own repairs, modifications and upgrades - Having a 3D model is functionally equivalent to having x-ray vision.</li>
         </ul></span>
+
+        <h2>Tiny Home Specs:</h2>
+        <p>Regardless of model and configuration, all <b>Scaffold Tiny Homes</b> share these characteristics:</p>
+
+        <ul>
+            <li><b>On/Off-grid Compatibility</b>: Equipped with connections for traditional utilities (water and electricity) while supporting seamless integration of off-grid systems such as solar or wind power, and rainwater collection with filtration..</li>
+            <li><b>Sensible Dimensions</b>: External width under 2.55m allows for road transport without special permits, while internal width exceeds 2m, accommodating a standard-length bed placed widthwise.</li>
+            <li><b>Modularity and Expandibility</b>: Base modules (ground floors), that always house all essential utilities, can be expanded vertically. The roof assembly easily detaches to slot in additional modules, then reattaches, because of the layout of both framing and electrical wiring.</li>
+        </ul>
+
+        <h2>Models</h2>
+        These dimensions were chosen to minimize material waste, as they correspond with 3, 4 and 5 full-width plywood sheets.
     </section>
 
     <section id="design" class="design-section">
@@ -346,10 +361,10 @@ Auth: Nicklas Vraa
 
                 if (details.classList.contains('show')) {
                     details.classList.remove('show');
-                    this.innerHTML = '&#x25BC;';
+                    this.innerHTML = ' <b><i> (show more)</i></b>';
                 } else {
                     details.classList.add('show');
-                    this.innerHTML = '&#x25B2;';
+                    this.innerHTML = '<b><i> (show less)</i></b>';
                 }
             });
         });
